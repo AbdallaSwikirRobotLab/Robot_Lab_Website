@@ -1,4 +1,4 @@
-# AIRoCA Lab Website
+# AIRoCS Lab Website
 
 AIRoCA Lab
 - Artificial Intelligence Robotics and Control Systems Laboratory 
