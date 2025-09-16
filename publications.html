@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Publications</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publications | AIRoCS Lab | Mohamed bin Zayed University of Artificial Intelligence">
+    <meta name="author" content="AIRoCS Lab">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/social-buttons.css" rel="stylesheet">
+    <style>
+      /* Lightweight, Bootstrap-2-friendly tweaks */
+      .pub-toolbar { margin: 10px 0 20px; }
+      .pub-toolbar .controls { margin-bottom: 10px; }
+      .pub-list { list-style: none; margin: 0; padding: 0; }
+      .pub-item { padding: 12px 12px 10px; border: 1px solid #eee; border-radius: 4px; margin-bottom: 12px; background: #fff; }
+      .pub-title { font-weight: 600; }
+      .pub-meta { margin: 6px 0 8px; color: #555; }
+      .label + .label { margin-left: 6px; }
+      .muted-small { color:#777; font-size: 12px; }
+      .year-heading { margin: 24px 0 10px; border-bottom: 1px solid #ddd; }
+      .lab-member { font-weight: bold; }
+      .affix-top-space { margin-top: 10px; }
+      @media (max-width: 767px) {
+        .pub-item { padding: 10px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="jumbotron subhead" id="overview">
+        <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
+        <h1 style="font-size: 1.6rem; line-height: 1.2; margin: 0.4em 0;">
+          Artificial Intelligence Robotics and Control Systems Laboratory (AIRoCS)
+        </h1>
+      </header>
+
+      <div class="masthead">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li class="active"><a href="#">Publications</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row-fluid">
+        <!-- Full width (no sidebar, no Quick Links / How to add a paper) -->
+        <div class="span12 content">
+          <div class="pub-toolbar">
+            <div class="row-fluid controls">
+              <form class="form-inline">
+                <input id="searchInput" type="text" class="input-xxlarge" placeholder="Search title, authors, venue, keywords…">
+                <select id="yearFilter" class="input-medium">
+                  <option value="all">All years</option>
+                </select>
+                <select id="typeFilter" class="input-medium">
+                  <option value="all">All types</option>
+                  <option value="journal">Journal</option>
+                  <option value="conference">Conference</option>
+                  <option value="preprint">Preprint</option>
+                  <option value="book">Book</option>
+                  <option value="other">Other</option>
+                </select>
+                <button id="clearBtn" type="button" class="btn">Clear</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- ===================== 2025 ===================== -->
+          <h3 class="year-heading">2025</h3>
+          <ul class="pub-list">
+            <!-- <li class="pub-item" data-year="2025" data-type="journal">
+              <div class="pub-title">Learning-Based Control for Aerial Manipulation</div>
+              <div class="pub-meta">
+                <span class="lab-member">A. Researcher</span>, B. Scientist, C. Doe.
+                <em>IEEE Transactions on Robotics</em>, 2025.
+                <span class="label label-success">Journal</span>
+              </div>
+              <div class="muted-small">Keywords: aerial manipulation, learning-based control, robotics</div>
+            </li>
+
+            <li class="pub-item" data-year="2025" data-type="conference">
+              <div class="pub-title">Vision-Language Navigation in Dynamic Environments</div>
+              <div class="pub-meta">
+                <span class="lab-member">D. Student</span>, E. Author, F. Collaborator.
+                In <em>Proc. IEEE ICRA</em>, 2025.
+                <span class="label label-info">Conference</span>
+              </div>
+              <div class="muted-small">Keywords: navigation, vision-language, embodied AI</div>
+            </li>
+
+            <li class="pub-item" data-year="2025" data-type="preprint">
+              <div class="pub-title">Robust Policy Learning for Multi-Rotor Swarms</div>
+              <div class="pub-meta">
+                G. Investigator, <span class="lab-member">H. LabMember</span>, I. Colleague.
+                <em>arXiv preprint</em>, 2025.
+                <span class="label">Preprint</span>
+              </div>
+              <div class="muted-small">Keywords: swarms, robustness, reinforcement learning</div>
+            </li>
+          </ul> -->
+
+          <!-- ===================== 2024 ===================== -->
+          <!-- <h3 class="year-heading">2024</h3>
+          <ul class="pub-list">
+            <li class="pub-item" data-year="2024" data-type="journal">
+              <div class="pub-title">Safe Reinforcement Learning for Quadrotors</div>
+              <div class="pub-meta">
+                J. Smith, <span class="lab-member">K. Researcher</span>, L. Expert.
+                <em>International Journal of Robotics Research</em>, 2024.
+                <span class="label label-success">Journal</span>
+              </div>
+              <div class="muted-small">Keywords: safety, reinforcement learning, quadrotors</div>
+            </li>
+
+            <li class="pub-item" data-year="2024" data-type="conference">
+              <div class="pub-title">Real-Time SLAM on Resource-Constrained Platforms</div>
+              <div class="pub-meta">
+                M. Dev, <span class="lab-member">N. Graduate</span>, O. Mentor.
+                In <em>Proc. IEEE/RSJ IROS</em>, 2024.
+                <span class="label label-info">Conference</span>
+              </div>
+              <div class="muted-small">Keywords: SLAM, embedded systems, real-time</div>
+            </li>
+          </ul> -->
+
+          <!-- ===================== 2023 ===================== -->
+          <!-- <h3 class="year-heading">2023</h3>
+          <ul class="pub-list">
+            <li class="pub-item" data-year="2023" data-type="other">
+              <div class="pub-title">Robotics for Extreme Environments: A Survey</div>
+              <div class="pub-meta">
+                P. Author, <span class="lab-member">Q. Fellow</span>.
+                <em>Workshop on Field Robotics</em>, 2023.
+                <span class="label">Other</span>
+              </div>
+              <div class="muted-small">Keywords: field robotics, survey</div>
+            </li>
+          </ul> -->
+
+          <p><a href="#top">Back to top ↑</a></p>
+        </div>
+      </div>
+
+      <hr>
+    </div>
+
+    <footer id="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span5">
+            <h3>Contact Information</h3>
+            <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
+            <p><b>Phone: </b>999-999-9999</p>
+            <p><b>Cell: </b>999-999-9999</p>
+            <a href="mailto:your.email@uni.edu">Email</a>
+          </div>
+          <div class="span2">
+            <a href="https://mybrandnewlogo.com/"><img src="thumbs/AIRoCS_logo.jpg" alt="research-lab-logo"/></a>
+          </div>
+          <div class="span5">
+            <h3>Address</h3>
+            <p>AIRoCS Laboratory<br>
+               Masdar City - SE45 05<br>
+               Abu Dhabi, UAE
+            </p>
+            <a href="http://maps.google.com/">Show Map</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript (placed at the end for faster page loads) -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      (function() {
+        function normalize(s){ return (s || '').toString().toLowerCase(); }
+
+        function populateYearFilter() {
+          var years = {};
+          $('.pub-item').each(function() {
+            years[$(this).data('year')] = true;
+          });
+          var list = Object.keys(years).sort(function(a,b){ return b - a; });
+          var $sel = $('#yearFilter');
+          list.forEach(function(y) {
+            $sel.append('<option value="' + y + '">' + y + '</option>');
+          });
+        }
+
+        function applyFilters() {
+          var q = normalize($('#searchInput').val());
+          var year = $('#yearFilter').val();
+          var type = $('#typeFilter').val();
+
+          $('.pub-item').each(function() {
+            var $it = $(this);
+            var matchesYear = (year === 'all') || ($it.data('year').toString() === year);
+            var matchesType = (type === 'all') || (normalize($it.data('type')) === normalize(type));
+            var text = normalize($it.text());
+            var matchesQuery = !q || text.indexOf(q) !== -1;
+
+            $it.toggle(matchesYear && matchesType && matchesQuery);
+          });
+        }
+
+        function wireUp() {
+          populateYearFilter();
+          $('#searchInput').on('keyup', applyFilters);
+          $('#yearFilter, #typeFilter').on('change', applyFilters);
+          $('#clearBtn').on('click', function(){
+            $('#searchInput').val('');
+            $('#yearFilter').val('all');
+            $('#typeFilter').val('all');
+            applyFilters();
+          });
+        }
+
+        if (window.jQuery) { jQuery(wireUp); }
+      })();
+    </script>
+  </body>
+</html>

@@ -1,101 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <title>Artificial Intelligence Robotics and Control Systems Laboratory - Home</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Research Lab, Home, Mohamed bin Zayed University of Artificial Intelligence">
-      <meta name="author" content="">
-      <!-- Le styles -->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-      <link href="css/theme.css" rel="stylesheet">
-   </head>
-   <body>
-      <div class="container">
-         <header class="jumbotron subhead" id="overview">
-            <p class="lead"> Mohamed bin Zayed University of Artificial Intelligence </p>
-            <h1>Artificial Intelligence Robotics and Control Systems Laboratory</h1>
-         </header>
-         <div class="masthead">
-            <div class="navbar">
-               <div class="navbar-inner">
-                  <div class="container">
-                     <ul class="nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="people.html">People</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="teaching.html">Teaching</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="row-fluid">
-            <div class="span12">
-               <div id="main-carousel" class="carousel slide">
-                  <div class="carousel-inner">
-                     <div class="item active">
-                        <img src="images/Robot1.JPEG" class="carousel-image" alt="">                      
-                        <div class="carousel-caption">
-                           <h4>Welcome to the AIRoCS Laboratory</h4>
-                           <!-- -->
-                           <p></p>
-                        </div>
-                     </div>
-                     <div class="item">
-                        <img src="images/RoboticsLab1.JPEG" class="carousel-image" alt="">
-                        <div class="carousel-caption">
-                           <h4>Campus</h4>
-                           <p></p>
-                        </div>
-                     </div>
-                     <div class="item">
-                        <img src="images/MBZUAIBuilding1.JPEG" class="carousel-image" alt="">
-                        <div class="carousel-caption">
-                           <h4>Main Building</h4>
-                           <p></p>
-                        </div>
-                     </div>
-                  </div>
-                  <a class="left carousel-control" href="#main-carousel" data-slide="prev">‹</a>
-                  <a class="right carousel-control" href="#main-carousel" data-slide="next">›</a>
-               </div>
-            </div>
-         </div>
-         <hr>
-      </div>
-      <footer id="footer">
-         <div class="container-fluid">
-            <div class="row-fluid">
-               <div class="span5">
-                  <h3>Contact Information</h3>
-                  <p><b>Office Hours: </b>Monday-Friday (9.00am - 5.00pm)</p>
-<!--                   <p><b>Phone: </b>+971 28113243</p> -->
-                  <a href="abdallarobotlab@gmail.com">Email</a>
-               </div>
-               <div class="span2">
-                  <a href="https://abdallaswikirrobotlab.github.io/Robot_Lab_Website/"><img src = "thumbs/AIRoCS_logo.jpg" alt="research-lab-logo"/></a>
-               </div>
-               <div class="span5">
-                  <h3>Address</h3>
-                  <p>AIRoCS Laboratory<br>
-                     Masdar City - SE45 05<br>
-                     Abu Dhabi, UAE<br>
-                  </p>
-                  <a href="https://maps.app.goo.gl/gb7csNPpujr68AkG7">Show Map</a>
-               </div>
-            </div>
-         </div>
-      </footer>
+  <head>
+    <meta charset="utf-8">
+    <title>Artificial Intelligence Robotics and Control Systems Laboratory - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIRoCS Lab at MBZUAI — intelligent robotics, control systems, safe learning, aerial manipulation, SLAM, swarms.">
+    <meta name="author" content="AIRoCS Lab">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <style>
+      /* Lightweight, Bootstrap-2-friendly tweaks for Home */
+      .subhead h1 { font-size: 1.6rem; line-height: 1.2; margin: .4em 0; }
+      .carousel { margin-bottom: 18px; }
+      .carousel-image {
+        width: 100%;
+        height: 420px;          /* tidy hero height on desktop */
+        object-fit: cover;      /* safe on modern browsers; ignored by older ones */
+      }
+      @media (max-width: 767px) {
+        .carousel-image { height: 240px; }
+      }
+      /* Caption overlay for readability */
+      .carousel-caption {
+        background: rgba(0,0,0,.45);
+        text-shadow: none;
+        border-radius: 4px;
+        padding: 10px 12px;
+      }
+      .carousel-caption h4, .carousel-caption p { color: #fff; }
+      /* Intro / badges */
+      .hero-intro {
+        padding: 14px 16px; border: 1px solid #eee; border-radius: 6px; background: #fff;
+      }
+      .focus-badges .label { margin: 3px 6px 0 0; display: inline-block; }
+      /* Highlights */
+      .feature {
+        border: 1px solid #eee; background:#fff; border-radius:4px; padding:12px; height:100%;
+      }
+      .feature h4 { margin-top: 0; }
+      .feature .muted-small { display:block; margin-top:6px; }
+      /* News list */
+      .news-list { list-style: none; margin: 0; padding: 0; }
+      .news-item {
+        border: 1px solid #f0f0f0; border-radius: 4px; background: #fff;
+        padding: 10px 12px; margin-bottom: 10px;
+      }
+      .news-item .label { margin-right: 6px; }
+      .muted-small { color:#777; font-size: 12px; }
+      .cta-row .btn { margin-right: 8px; margin-bottom: 8px; }
+      /* Footer logo */
+      #footer img { max-width: 100%; height: auto; }
+      /* Skip link for a11y */
+      .skip-link {
+        position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+      }
+      .skip-link:focus { position: static; width: auto; height: auto; padding: 4px 8px; background: #fcf8e3; }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-      <!-- Javascript files -->
-      <script src="js/jquery-1.9.1.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script> $('#main-carousel').carousel(); </script>
-   </body>
+    <div class="container" id="top">
+      <header class="jumbotron subhead" id="overview">
+        <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
+        <h1>Artificial Intelligence Robotics and Control Systems Laboratory (AIRoCS)</h1>
+      </header>
+
+      <div class="masthead">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="main" class="row-fluid" role="main" aria-label="Hero and overview">
+        <div class="span12">
+          <!-- HERO CAROUSEL -->
+          <div id="main-carousel" class="carousel slide" data-interval="6000" aria-label="AIRoCS showcase">
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="images/Robot1.JPEG" class="carousel-image" alt="AIRoCS robot performing a manipulation task" loading="eager">
+                <div class="carousel-caption">
+                  <h4>Welcome to the AIRoCS Laboratory</h4>
+                  <p>Intelligent robotics and control systems — from safe learning theory to real-world deployments.</p>
+                </div>
+              </div>
+              <div class="item">
+                <img src="images/RoboticsLab1.JPEG" class="carousel-image" alt="Inside the AIRoCS robotics laboratory with test arenas" loading="lazy">
+                <div class="carousel-caption">
+                  <h4>Flying & Mobile Testbeds</h4>
+                  <p>10×10×6&nbsp;m arena, ROS&nbsp;2 test loops, and hardware-in-the-loop simulation.</p>
+                </div>
+              </div>
+              <div class="item">
+                <img src="images/MBZUAIBuilding1.JPEG" class="carousel-image" alt="MBZUAI main building at Masdar City" loading="lazy">
+                <div class="carousel-caption">
+                  <h4>MBZUAI · Abu Dhabi</h4>
+                  <p>Situated in Masdar City, collaborating across AI and robotics communities.</p>
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#main-carousel" data-slide="prev" role="button" aria-label="Previous slide">‹</a>
+            <a class="right carousel-control" href="#main-carousel" data-slide="next" role="button" aria-label="Next slide">›</a>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- ABOUT + FOCUS -->
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="hero-intro">
+            <h3 style="margin-top:0;">About AIRoCS</h3>
+            <p>
+              We advance <strong>intelligent robotics and control</strong> with an emphasis on
+              <em>safe learning</em>, <em>aerial manipulation</em>, <em>vision-language navigation</em>,
+              <em>SLAM on embedded platforms</em>, and <em>multi-robot swarms</em>.
+              Our work spans theory, algorithms, and deployment on real systems.
+            </p>
+            <div class="focus-badges">
+              <span class="label label-important">Safety</span>
+              <span class="label label-success">Learning-Based Control</span>
+              <span class="label label-info">Aerial Manipulation</span>
+              <span class="label label-warning">Vision-Language</span>
+              <span class="label">SLAM & Perception</span>
+              <span class="label label-inverse">Swarms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIGHLIGHTS -->
+      <div class="row-fluid" style="margin-top:16px;">
+        <div class="span4">
+          <div class="feature">
+            <h4>Featured Research</h4>
+            <p>
+              Learning-based control for quadrotor-arm systems, robust policies for multi-rotor swarms,
+              and instruction-following in dynamic environments.
+            </p>
+            <a class="btn btn-primary" href="research.html">Explore Research</a>
+            <span class="muted-small">See project pages, demos, and datasets.</span>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="feature">
+            <h4>Recent Publications</h4>
+            <!-- <p>
+              IEEE T-RO (2025), ICRA (2025), IJRR (2024), IROS (2024) and more across robotics & AI venues.
+            </p> -->
+            <a class="btn" href="publications.html">Browse Publications</a>
+            <span class="muted-small">Filter by year, venue, and keywords.</span>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="feature">
+            <h4>Join the Lab</h4>
+            <p>
+              We welcome <strong>PhD students</strong>, <strong>postdocs</strong>, and
+              <strong>research interns</strong> passionate about intelligent robots.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-success" href="people.html#postdoctoral">Open Positions</a>
+              <a class="btn" href="contact.html">Contact Us</a>
+            </div>
+            <span class="muted-small">Email your CV to <a href="mailto:Abdalla.Swikir@mbzuai.ac.ae">Abdalla.Swikir@mbzuai.ac.ae</a></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECENT NEWS PREVIEW (manually curated; links point to news.html anchors) -->
+      <div class="row-fluid" style="margin-top:18px;">
+        <div class="span12">
+          <h3 style="margin-top:0;">Recent News</h3>
+          <!-- <ul class="news-list">
+            <li class="news-item">
+              <span class="label label-info">Paper</span> <strong>ICRA 2025 Oral:</strong>
+              “Vision-Language Navigation in Dynamic Environments.”
+              <span class="muted-small">3 May 2025</span>
+              <div class="muted-small"><a href="news.html#news-icra25-oral">Read more</a> · <a href="publications.html">Paper page</a></div>
+            </li>
+            <li class="news-item">
+              <span class="label label-success">Award</span> Best Demo — Aerial Manipulation Platform.
+              <span class="muted-small">18 March 2025</span>
+              <div class="muted-small"><a href="news.html">See details</a> · <a href="research.html">Project</a></div>
+            </li>
+            <li class="news-item">
+              <span class="label label-warning">Media</span> Interview: Safe RL for Quadrotors.
+              <span class="muted-small">5 February 2025</span>
+              <div class="muted-small"><a href="news.html">Watch / read</a> · <a href="publications.html">Related work</a></div>
+            </li>
+          </ul>
+          <p><a class="btn" href="news.html">All News</a></p> -->
+        </div> 
+      </div>
+
+      <p><a href="#top">Back to top ↑</a></p>
+
+      <hr>
+    </div>
+
+    <footer id="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span5">
+            <h3>Contact Information</h3>
+            <p><b>Office Hours: </b>Monday–Friday (9.00am–5.00pm)</p>
+            <a href="mailto:abdallarobotlab@gmail.com">Email</a>
+          </div>
+          <div class="span2">
+            <a href="https://abdallaswikirrobotlab.github.io/Robot_Lab_Website/">
+              <img src="thumbs/AIRoCS_logo.jpg" alt="AIRoCS lab logo">
+            </a>
+          </div>
+          <div class="span5">
+            <h3>Address</h3>
+            <p>
+              AIRoCS Laboratory<br>
+              Masdar City – SE45 05<br>
+              Abu Dhabi, UAE
+            </p>
+            <a href="https://maps.app.goo.gl/gb7csNPpujr68AkG7">Show Map</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS files -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      // Init carousel with keyboard + pause-on-hover
+      (function(){
+        var $c = $('#main-carousel');
+        $c.carousel({ interval: 6000, pause: 'hover' });
+
+        // Keyboard support when carousel is focused
+        $c.attr('tabindex','0').on('keydown', function(e){
+          if (e.which === 37) { $(this).carousel('prev'); } // left
+          if (e.which === 39) { $(this).carousel('next'); } // right
+        });
+      })();
+    </script>
+  </body>
 </html>

@@ -32,10 +32,17 @@
         padding: 10px 12px; border-radius: 3px; margin-bottom: 14px;
       }
       #footer img { max-width: 100%; height: auto; }
+
+      /* HEADER → truly full width (content + background), only header */
+      .header-band { background:#fff; }
+      .jumbotron.subhead { margin: 0 0 8px 0; padding: 18px 20px; }
+      .masthead .navbar { margin-bottom: 12px; }
+      .masthead .navbar-inner { padding-left: 20px; padding-right: 20px; } /* light gutter so items don't touch edges */
     </style>
   </head>
   <body>
-    <div class="container" id="top" itemprop="name" content="AIRoCS Lab">
+    <!-- ==== FULL-WIDTH HEADER (content spans full width like footer) ==== -->
+    <div class="container-fluid header-band" id="top" itemprop="name" content="AIRoCS Lab">
       <header class="jumbotron subhead" id="overview">
         <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
         <h1 style="font-size: 1.6rem; line-height: 1.2; margin: 0.4em 0;">
@@ -46,32 +53,28 @@
       <div class="masthead">
         <div class="navbar">
           <div class="navbar-inner">
-            <div class="container">
-              <ul class="nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="people.html">People</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="teaching.html">Teaching</a></li>
-                <li class="active"><a href="#">Contact</a></li>
-              </ul>
-            </div>
+            <!-- NOTE: no .container here → header/nav are full width -->
+            <ul class="nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="people.html">People</a></li>
+              <li><a href="research.html">Research</a></li>
+              <li><a href="publications.html">Publications</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="teaching.html">Teaching</a></li>
+              <li class="active"><a href="#">Contact</a></li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
 
+    <!-- ==== MAIN CONTENT (boxed width) ==== -->
+    <div class="container">
       <hr>
 
       <div class="row-fluid">
         <div class="span8 content">
-          <!-- <div class="callout"> -->
-            <!-- For general inquiries, collaborations, or visits, email
-            <a href="mailto:Abdalla.Swikir@mbzuai.ac.ae" itemprop="email">Abdalla.Swikir@mbzuai.ac.ae</a>
-            or the lab at <a href="mailto:abdallarobotlab@gmail.com">abdallarobotlab@gmail.com</a>. -->
-          <!-- </div> -->
-
           <!-- Responsive Google Map -->
           <div class="map-wrap" aria-label="Map to AIRoCS Lab at MBZUAI">
             <iframe
@@ -120,7 +123,7 @@
               <a href="#" class="copy-badge" data-copy="Abdalla.Swikir@mbzuai.ac.ae" title="Copy email"></a>
             </p>
             <p class="muted-small" style="margin-top:-6px;">
-              <span class="label">Email</span> <a href="mailto:abdallarobotlab@gmail.com" id="email-lab">abdallarobotlab@gmail.com</a>
+              <span class="label">Lab:</span> <a href="mailto:abdallarobotlab@gmail.com" id="email-lab">abdallarobotlab@gmail.com</a>
               <a href="#" class="copy-badge" data-copy="abdallarobotlab@gmail.com" title="Copy email"></a>
             </p>
             <p>
@@ -150,11 +153,11 @@
       </div>
 
       <p><a href="#top">Back to top ↑</a></p>
-      
 
       <hr>
     </div>
 
+    <!-- ==== FULL-WIDTH FOOTER (unchanged) ==== -->
     <footer id="footer">
       <div class="container-fluid">
         <div class="row-fluid">
@@ -206,4 +209,3 @@
     </script>
   </body>
 </html>
-

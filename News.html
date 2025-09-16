@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>News</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="News | AIRoCS Lab | Mohamed bin Zayed University of Artificial Intelligence">
+    <meta name="author" content="AIRoCS Lab">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/social-buttons.css" rel="stylesheet">
+    <style>
+      /* Lightweight, Bootstrap-2-friendly tweaks for the News page */
+      .news-toolbar { margin: 10px 0 20px; }
+      .news-toolbar .controls { margin-bottom: 10px; }
+      .news-list { list-style: none; margin: 0; padding: 0; }
+      .news-item {
+        padding: 12px; border: 1px solid #eee; border-radius: 4px;
+        margin-bottom: 12px; background: #fff;
+      }
+      .news-title { font-weight: 600; line-height: 1.25; }
+      .news-meta { margin: 6px 0 8px; color: #555; }
+      .news-body { margin: 8px 0 6px; }
+      .label + .label { margin-left: 6px; }
+      .muted-small { color:#777; font-size: 12px; }
+      .year-heading { margin: 24px 0 10px; border-bottom: 1px solid #ddd; }
+      .highlight { border-color:#d9edf7; background:#f7fbff; }
+      .thumb {
+        width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;
+        border: 1px solid #f0f0f0; background: #fafafa; margin-bottom: 8px;
+      }
+      .news-links a { margin-right: 10px; }
+      @media (max-width: 767px) {
+        .news-item { padding: 10px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="jumbotron subhead" id="overview">
+        <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
+        <h1 style="font-size: 1.6rem; line-height: 1.2; margin: 0.4em 0;">
+          Artificial Intelligence Robotics and Control Systems Laboratory (AIRoCS)
+        </h1>
+      </header>
+
+      <div class="masthead">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li class="active"><a href="#">News</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row-fluid">
+        <div class="span12 content">
+          <!-- Intro / Subscribe -->
+              
+
+          <div class="alert alert-info" style="margin-bottom:16px;">
+            <strong>Lab updates:</strong> paper acceptances, awards, demos, media & events.
+            <span class="pull-right muted-small" style="margin-left:8px;">
+              Want to follow along? Add this page to your bookmarks.
+            </span>
+          </div>
+             <div class="callout">
+              We welcome <strong>PhD students</strong>, <strong>postdocs</strong>, and <strong>visiting interns</strong>
+              passionate about intelligent robots. Email your CV and short statement of fit to
+              <a href="mailto:Abdalla.Swikir@mbzuai.ac.ae">Abdalla.Swikir@mbzuai.ac.ae</a> (subject: <em>AIRoCS Application</em>).
+            </div>
+            
+          <!-- Controls -->
+          <div class="news-toolbar">
+            <div class="row-fluid controls">
+              <form class="form-inline">
+                <input id="searchInput" type="text" class="input-xxlarge" placeholder="Search title, text, people, venues, tags…">
+                <select id="yearFilter" class="input-medium">
+                  <option value="all">All years</option>
+                </select>
+                <select id="typeFilter" class="input-medium">
+                  <option value="all">All types</option>
+                  <option value="paper">Paper</option>
+                  <option value="award">Award</option>
+                  <option value="media">Media</option>
+                  <option value="event">Event</option>
+                  <option value="talk">Talk</option>
+                  <option value="press">Press</option>
+                  <option value="other">Other</option>
+                </select>
+                <select id="tagFilter" class="input-medium">
+                  <option value="all">All tags</option>
+                </select>
+                <button id="clearBtn" type="button" class="btn">Clear</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- ===================== 2025 ===================== -->
+          <h3 class="year-heading" data-year-heading="2025">2025</h3>
+          <!-- <ul class="news-list" data-year-list="2025">
+            <li id="news-icra25-oral" class="news-item highlight" data-year="2025" data-type="paper" data-tags="ICRA, vision-language, navigation, embodied AI, acceptance" data-date="2025-05-03">
+              <img class="thumb" src="thumbs/news_icra25_oral.jpg" alt="ICRA 2025 oral announcement">
+              <div class="news-title">ICRA 2025: “Vision-Language Navigation in Dynamic Environments” accepted as <em>Oral</em></div>
+              <div class="news-meta">
+                <span class="label label-info">Paper</span>
+                <span class="label">ICRA 2025</span>
+                <span class="label">Embodied AI</span>
+                · <span class="muted-small">3 May 2025</span>
+              </div>
+              <p class="news-body">
+                Congrats to <span class="lab-member">D. Student</span> and team! We present instruction-following under crowd motion with predictive control.
+              </p>
+              <div class="news-links">
+                <a href="publications.html" class="muted-small">Paper info</a>
+                <a href="#" class="muted-small">Project page</a>
+                <a href="#" class="muted-small">Demo video</a>
+              </div>
+            </li>
+
+            <li class="news-item" data-year="2025" data-type="award" data-tags="award, aerial manipulation, robotics, recognition" data-date="2025-03-18">
+              <div class="news-title">Best Demo Award — Aerial Manipulation Platform</div>
+              <div class="news-meta">
+                <span class="label label-success">Award</span>
+                <span class="label">Aerial Manipulation</span>
+                · <span class="muted-small">18 March 2025</span>
+              </div>
+              <p class="news-body">
+                Our quadrotor-arm performed contact-rich tasks with payload variation at the Robotics Open Day.
+              </p>
+              <div class="news-links">
+                <a href="research.html" class="muted-small">Project</a>
+                <a href="#" class="muted-small">Photos</a>
+              </div>
+            </li>
+
+            <li class="news-item" data-year="2025" data-type="media" data-tags="media, interview, safety, quadrotors" data-date="2025-02-05">
+              <div class="news-title">Media: Interview on safe RL for quadrotors</div>
+              <div class="news-meta">
+                <span class="label label-warning">Media</span>
+                <span class="label">Safety</span>
+                · <span class="muted-small">5 February 2025</span>
+              </div>
+              <p class="news-body">
+                <span class="lab-member">K. Researcher</span> discussed constraint-aware policies and reachability shields for agile flight.
+              </p>
+              <div class="news-links">
+                <a href="#" class="muted-small">Watch / read</a>
+                <a href="publications.html" class="muted-small">Related IJRR’24 ↗</a>
+              </div>
+            </li> -->
+          </ul>
+
+
+          <p><a href="#top">Back to top ↑</a></p>
+        </div>
+      </div>
+
+      <hr>
+    </div>
+
+    <footer id="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span5">
+            <h3>Contact Information</h3>
+            <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
+            <p><b>Phone: </b>999-999-9999</p>
+            <p><b>Cell: </b>999-999-9999</p>
+            <a href="mailto:your.email@uni.edu">Email</a>
+          </div>
+          <div class="span2">
+            <a href="https://mybrandnewlogo.com/"><img src="thumbs/AIRoCS_logo.jpg" alt="research-lab-logo"/></a>
+          </div>
+          <div class="span5">
+            <h3>Address</h3>
+            <p>AIRoCS Laboratory<br>
+               Masdar City - SE45 05<br>
+               Abu Dhabi, UAE
+            </p>
+            <a href="http://maps.google.com/">Show Map</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript (placed at the end for faster page loads) -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      (function() {
+        function normalize(s){ return (s || '').toString().toLowerCase(); }
+
+        // Build Year & Tag filter options from items
+        function populateFilters() {
+          var years = {}, tags = {};
+          $('.news-item').each(function() {
+            years[$(this).data('year')] = true;
+            var tagStr = ($(this).data('tags') || '').toString();
+            tagStr.split(',').map(function(t){ return $.trim(t); }).forEach(function(t){
+              if (t) { tags[t] = true; }
+            });
+          });
+
+          var yearList = Object.keys(years).sort(function(a,b){ return b - a; });
+          var tagList  = Object.keys(tags).sort(function(a,b){ return a.toLowerCase() > b.toLowerCase() ? 1 : -1; });
+
+          var $yearSel = $('#yearFilter');
+          yearList.forEach(function(y){ $yearSel.append('<option value="'+y+'">'+y+'</option>'); });
+
+          var $tagSel = $('#tagFilter');
+          tagList.forEach(function(t){ $tagSel.append('<option value="'+t+'">'+t+'</option>'); });
+        }
+
+        function applyFilters() {
+          var q = normalize($('#searchInput').val());
+          var year = $('#yearFilter').val();
+          var type = $('#typeFilter').val();
+          var tag  = $('#tagFilter').val();
+
+          $('.news-item').each(function() {
+            var $it = $(this);
+            var matchesYear = (year === 'all') || ($it.data('year').toString() === year);
+            var matchesType = (type === 'all') || (normalize($it.data('type')) === normalize(type));
+            var matchesTag  = (tag === 'all')  || (normalize(($it.data('tags')||'')).indexOf(normalize(tag)) !== -1);
+            var text = normalize($it.text());
+            var matchesQuery = !q || text.indexOf(q) !== -1;
+
+            $it.toggle(matchesYear && matchesType && matchesTag && matchesQuery);
+          });
+
+          // Hide year headings/lists with no visible items
+          $('[data-year-list]').each(function(){
+            var $list = $(this);
+            var year = $list.data('year-list');
+            var anyVisible = $list.find('.news-item:visible').length > 0;
+            $('[data-year-heading="'+year+'"]').toggle(anyVisible);
+            $list.toggle(anyVisible);
+          });
+        }
+
+        function sortWithinYear() {
+          // Optional: sort items in each year list by data-date (desc)
+          $('[data-year-list]').each(function(){
+            var $list = $(this);
+            var items = $list.children('.news-item').get();
+            items.sort(function(a, b){
+              var da = new Date($(a).data('date') || '1970-01-01');
+              var db = new Date($(b).data('date') || '1970-01-01');
+              return db - da; // newest first
+            });
+            $.each(items, function(_, li){ $list.append(li); });
+          });
+        }
+
+        function wireUp() {
+          populateFilters();
+          sortWithinYear();
+          $('#searchInput').on('keyup', applyFilters);
+          $('#yearFilter, #typeFilter, #tagFilter').on('change', applyFilters);
+          $('#clearBtn').on('click', function(){
+            $('#searchInput').val('');
+            $('#yearFilter').val('all');
+            $('#typeFilter').val('all');
+            $('#tagFilter').val('all');
+            applyFilters();
+          });
+
+          // Support linking to a specific news item by hash (e.g., news.html#news-icra25-oral)
+          if (window.location.hash) {
+            var $target = $(window.location.hash);
+            if ($target.length) {
+              $('html, body').scrollTop($target.offset().top - 10);
+              $target.addClass('highlight');
+              setTimeout(function(){ $target.removeClass('highlight'); }, 3000);
+            }
+          }
+
+          applyFilters(); // initial
+        }
+
+        if (window.jQuery) { jQuery(wireUp); }
+      })();
+    </script>
+  </body>
+</html>
