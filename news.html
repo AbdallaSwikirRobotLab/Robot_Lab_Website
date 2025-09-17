@@ -1,299 +1,576 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>News</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="News | AIRoCS Lab | Mohamed bin Zayed University of Artificial Intelligence">
-    <meta name="author" content="AIRoCS Lab">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="css/theme.css" rel="stylesheet">
-    <link href="css/social-buttons.css" rel="stylesheet">
-    <style>
-      /* Lightweight, Bootstrap-2-friendly tweaks for the News page */
-      .news-toolbar { margin: 10px 0 20px; }
-      .news-toolbar .controls { margin-bottom: 10px; }
-      .news-list { list-style: none; margin: 0; padding: 0; }
+
+<head>
+  <meta charset="utf-8">
+  <title>News</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="News | AIRoCS Lab | Mohamed bin Zayed University of Artificial Intelligence">
+  <meta name="author" content="AIRoCS Lab">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="css/social-buttons.css" rel="stylesheet">
+  <style>
+    /* Lightweight, Bootstrap-2-friendly tweaks for the News page */
+    .news-toolbar {
+      margin: 10px 0 20px;
+    }
+
+    .news-toolbar .controls {
+      margin-bottom: 10px;
+    }
+
+    .news-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .news-item {
+      padding: 12px;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      background: #fff;
+    }
+
+    .news-title {
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .news-meta {
+      margin: 6px 0 8px;
+      color: #555;
+    }
+
+    .news-body {
+      margin: 8px 0 6px;
+    }
+
+    .label+.label {
+      margin-left: 6px;
+    }
+
+    .muted-small {
+      color: #777;
+      font-size: 12px;
+    }
+
+    .year-heading {
+      margin: 24px 0 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .highlight {
+      border-color: #d9edf7;
+      background: #f7fbff;
+    }
+
+    .thumb {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 3px;
+      border: 1px solid #f0f0f0;
+      background: #fafafa;
+      margin-bottom: 8px;
+    }
+
+    .news-links a {
+      margin-right: 10px;
+    }
+
+    @media (max-width: 767px) {
       .news-item {
-        padding: 12px; border: 1px solid #eee; border-radius: 4px;
-        margin-bottom: 12px; background: #fff;
+        padding: 10px;
       }
-      .news-title { font-weight: 600; line-height: 1.25; }
-      .news-meta { margin: 6px 0 8px; color: #555; }
-      .news-body { margin: 8px 0 6px; }
-      .label + .label { margin-left: 6px; }
-      .muted-small { color:#777; font-size: 12px; }
-      .year-heading { margin: 24px 0 10px; border-bottom: 1px solid #ddd; }
-      .highlight { border-color:#d9edf7; background:#f7fbff; }
-      .thumb {
-        width: 100%; max-height: 180px; object-fit: cover; border-radius: 3px;
-        border: 1px solid #f0f0f0; background: #fafafa; margin-bottom: 8px;
-      }
-      .news-links a { margin-right: 10px; }
-      @media (max-width: 767px) {
-        .news-item { padding: 10px; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header class="jumbotron subhead" id="overview">
-        <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
-        <h1 style="font-size: 1.6rem; line-height: 1.2; margin: 0.4em 0;">
-          Artificial Intelligence Robotics and Control Systems Laboratory (AIRoCS)
-        </h1>
-      </header>
+    }
+  </style>
+</head>
 
-      <div class="masthead">
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <ul class="nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="people.html">People</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li class="active"><a href="#">News</a></li>
-                <li><a href="teaching.html">Teaching</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </div>
+<body>
+  <div class="container">
+    <header class="jumbotron subhead" id="overview">
+      <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
+      <h1 style="font-size: 1.6rem; line-height: 1.2; margin: 0.4em 0;">
+        Artificial Intelligence Robotics and Control Systems Laboratory (AIRoCS)
+      </h1>
+    </header>
+
+    <div class="masthead">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <ul class="nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="people.html">People</a></li>
+              <li><a href="research.html">Research</a></li>
+              <li><a href="publications.html">Publications</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li class="active"><a href="#">News</a></li>
+              <li><a href="teaching.html">Teaching</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
           </div>
         </div>
       </div>
-
-      <hr>
-
-      <div class="row-fluid">
-        <div class="span12 content">
-          <!-- Intro / Subscribe -->
-              
-
-          <div class="alert alert-info" style="margin-bottom:16px;">
-            <strong>Lab updates:</strong> paper acceptances, awards, demos, media & events.
-            <span class="pull-right muted-small" style="margin-left:8px;">
-              Want to follow along? Add this page to your bookmarks.
-            </span>
-          </div>
-             <div class="callout">
-              We welcome <strong>PhD students</strong>, <strong>postdocs</strong>, and <strong>visiting interns</strong>
-              passionate about intelligent robots. Email your CV and short statement of fit to
-              <a href="mailto:Abdalla.Swikir@mbzuai.ac.ae">Abdalla.Swikir@mbzuai.ac.ae</a> (subject: <em>AIRoCS Application</em>).
-            </div>
-            
-          <!-- Controls -->
-          <div class="news-toolbar">
-            <div class="row-fluid controls">
-              <form class="form-inline">
-                <input id="searchInput" type="text" class="input-xxlarge" placeholder="Search title, text, people, venues, tags…">
-                <select id="yearFilter" class="input-medium">
-                  <option value="all">All years</option>
-                </select>
-                <select id="typeFilter" class="input-medium">
-                  <option value="all">All types</option>
-                  <option value="paper">Paper</option>
-                  <option value="award">Award</option>
-                  <option value="media">Media</option>
-                  <option value="event">Event</option>
-                  <option value="talk">Talk</option>
-                  <option value="press">Press</option>
-                  <option value="other">Other</option>
-                </select>
-                <select id="tagFilter" class="input-medium">
-                  <option value="all">All tags</option>
-                </select>
-                <button id="clearBtn" type="button" class="btn">Clear</button>
-              </form>
-            </div>
-          </div>
-
-          <!-- ===================== 2025 ===================== -->
-          <h3 class="year-heading" data-year-heading="2025">2025</h3>
-          <!-- <ul class="news-list" data-year-list="2025">
-            <li id="news-icra25-oral" class="news-item highlight" data-year="2025" data-type="paper" data-tags="ICRA, vision-language, navigation, embodied AI, acceptance" data-date="2025-05-03">
-              <img class="thumb" src="thumbs/news_icra25_oral.jpg" alt="ICRA 2025 oral announcement">
-              <div class="news-title">ICRA 2025: “Vision-Language Navigation in Dynamic Environments” accepted as <em>Oral</em></div>
-              <div class="news-meta">
-                <span class="label label-info">Paper</span>
-                <span class="label">ICRA 2025</span>
-                <span class="label">Embodied AI</span>
-                · <span class="muted-small">3 May 2025</span>
-              </div>
-              <p class="news-body">
-                Congrats to <span class="lab-member">D. Student</span> and team! We present instruction-following under crowd motion with predictive control.
-              </p>
-              <div class="news-links">
-                <a href="publications.html" class="muted-small">Paper info</a>
-                <a href="#" class="muted-small">Project page</a>
-                <a href="#" class="muted-small">Demo video</a>
-              </div>
-            </li>
-
-            <li class="news-item" data-year="2025" data-type="award" data-tags="award, aerial manipulation, robotics, recognition" data-date="2025-03-18">
-              <div class="news-title">Best Demo Award — Aerial Manipulation Platform</div>
-              <div class="news-meta">
-                <span class="label label-success">Award</span>
-                <span class="label">Aerial Manipulation</span>
-                · <span class="muted-small">18 March 2025</span>
-              </div>
-              <p class="news-body">
-                Our quadrotor-arm performed contact-rich tasks with payload variation at the Robotics Open Day.
-              </p>
-              <div class="news-links">
-                <a href="research.html" class="muted-small">Project</a>
-                <a href="#" class="muted-small">Photos</a>
-              </div>
-            </li>
-
-            <li class="news-item" data-year="2025" data-type="media" data-tags="media, interview, safety, quadrotors" data-date="2025-02-05">
-              <div class="news-title">Media: Interview on safe RL for quadrotors</div>
-              <div class="news-meta">
-                <span class="label label-warning">Media</span>
-                <span class="label">Safety</span>
-                · <span class="muted-small">5 February 2025</span>
-              </div>
-              <p class="news-body">
-                <span class="lab-member">K. Researcher</span> discussed constraint-aware policies and reachability shields for agile flight.
-              </p>
-              <div class="news-links">
-                <a href="#" class="muted-small">Watch / read</a>
-                <a href="publications.html" class="muted-small">Related IJRR’24 ↗</a>
-              </div>
-            </li> -->
-          </ul>
-
-
-          <p><a href="#top">Back to top ↑</a></p>
-        </div>
-      </div>
-
-      <hr>
     </div>
 
-    <footer id="footer">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span5">
-            <h3>Contact Information</h3>
-            <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
-            <p><b>Phone: </b>999-999-9999</p>
-            <p><b>Cell: </b>999-999-9999</p>
-            <a href="mailto:your.email@uni.edu">Email</a>
-          </div>
-          <div class="span2">
-            <a href="https://mybrandnewlogo.com/"><img src="thumbs/AIRoCS_logo.jpg" alt="research-lab-logo"/></a>
-          </div>
-          <div class="span5">
-            <h3>Address</h3>
-            <p>AIRoCS Laboratory<br>
-               Masdar City - SE45 05<br>
-               Abu Dhabi, UAE
-            </p>
-            <a href="http://maps.google.com/">Show Map</a>
+    <hr>
+
+    <div class="row-fluid">
+      <div class="span12 content">
+        <!-- Intro / Subscribe -->
+
+
+        <div class="alert alert-info" style="margin-bottom:16px;">
+          <strong>Lab updates:</strong> paper acceptances, awards, demos, media & events.
+          <span class="pull-right muted-small" style="margin-left:8px;">
+            Want to follow along? Add this page to your bookmarks.
+          </span>
+        </div>
+        <div class="callout">
+          We welcome <strong>PhD students</strong>, <strong>postdocs</strong>, and <strong>visiting interns</strong>
+          passionate about intelligent robots. Email your CV and short statement of fit to
+          <a href="mailto:Abdalla.Swikir@mbzuai.ac.ae">Abdalla.Swikir@mbzuai.ac.ae</a> (subject: <em>AIRoCS
+            Application</em>).
+        </div>
+
+        <!-- Controls -->
+        <div class="news-toolbar">
+          <div class="row-fluid controls">
+            <form class="form-inline">
+              <input id="searchInput" type="text" class="input-xxlarge"
+                placeholder="Search title, text, people, venues, tags…">
+              <select id="yearFilter" class="input-medium">
+                <option value="all">All years</option>
+              </select>
+              <select id="typeFilter" class="input-medium">
+                <option value="all">All types</option>
+                <option value="paper">Paper</option>
+                <option value="award">Award</option>
+                <option value="media">Media</option>
+                <option value="event">Event</option>
+                <option value="talk">Talk</option>
+                <option value="press">Press</option>
+                <option value="other">Other</option>
+              </select>
+              <select id="tagFilter" class="input-medium">
+                <option value="all">All tags</option>
+              </select>
+              <button id="clearBtn" type="button" class="btn">Clear</button>
+            </form>
           </div>
         </div>
+
+        <!-- ===================== 2025 ===================== -->
+        <h3 class="year-heading" data-year-heading="2025">2025</h3>
+        <ul class="news-list" data-year-list="2025">
+          <li id="news-ecc25-certified-control" class="news-item" data-year="2025" data-type="event"
+            data-tags="event, ECC, European Control Conference, control, formal methods" data-date="2025-06-01">
+            <div class="news-title">Certified Control Synthesis for Robotic Systems, European Control Conference
+              (ECC'25)</div>
+            <div class="news-meta">
+              <span class="label">Event</span>
+              <span class="label">ECC 2025</span>
+              <span class="muted-small">2025</span>
+            </div>
+            <p class="news-body">Session on certified/verified controllers for robotics.</p>
+          </li>
+
+          <li id="news-icra25-handy-moves" class="news-item" data-year="2025" data-type="event"
+            data-tags="event, ICRA, workshop, dexterity, manipulation, hands" data-date="2025-05-01">
+            <div class="news-title">Handy Moves: Dexterity in Multi-Fingered Hands Workshop, IEEE International
+              Conference on Robotics and Automation (ICRA'25)</div>
+            <div class="news-meta">
+              <span class="label">Event</span>
+              <span class="label">ICRA 2025</span>
+              <span class="muted-small">2025</span>
+            </div>
+            <p class="news-body">Workshop focused on dexterous manipulation with multi-fingered hands.</p>
+          </li>
+
+          <li id="news-icra25-outstanding-reviewer" class="news-item" data-year="2025" data-type="award"
+            data-tags="award, ICRA, reviewer, editorial board" data-date="2025-05-01">
+            <div class="news-title">Editorial Board Outstanding Reviewer Award — ICRA 2025</div>
+            <div class="news-meta">
+              <span class="label label-success">Award</span>
+              <span class="label">ICRA 2025</span>
+              <span class="muted-small">2025</span>
+            </div>
+            <p class="news-body">Recognized with the Editorial Board Outstanding Reviewer Award at ICRA 2025.</p>
+          </li>
+
+          <li id="news-erf25-ai-robotics-finalist" class="news-item" data-year="2025" data-type="award"
+            data-tags="award, ERF, European Robotics Forum, paper finalist, AI-Robotics" data-date="2025-03-01">
+            <div class="news-title">Best AI-Robotics Paper Award — Finalist, ERF 2025</div>
+            <div class="news-meta">
+              <span class="label label-success">Award</span>
+              <span class="label">ERF 2025</span>
+              <span class="muted-small">2025</span>
+            </div>
+            <p class="news-body">Paper selected as a finalist for the Best AI-Robotics Paper Award at the European
+              Robotics Forum 2025.</p>
+          </li>
+        </ul>
+        <!-- ===================== 2024 ===================== -->
+        <h3 class="year-heading" data-year-heading="2024">2024</h3>
+        <ul class="news-list" data-year-list="2024">
+          <li id="news-iros24-eurobin-challenge" class="news-item" data-year="2024" data-type="event"
+            data-tags="event, IROS, challenge, manipulation, euROBIN" data-date="2024-10-01">
+            <div class="news-title">euROBIN Manipulation Skill Versatility Challenge, IEEE/RSJ International Conference
+              on Intelligent Robots and Systems (IROS’24)</div>
+            <div class="news-meta">
+              <span class="label">Event</span>
+              <span class="label">IROS 2024</span>
+              <span class="muted-small">2024</span>
+            </div>
+            <p class="news-body">Competition on versatile manipulation skills.</p>
+          </li>
+
+          <li id="news-iros24-tutorial1" class="news-item" data-year="2024" data-type="event"
+            data-tags="event, IROS, tutorial, interaction control, energy methods, learning" data-date="2024-10-01">
+            <div class="news-title">Foundations of interaction control for contact robots (part II): Energy-based
+              methods and interactive learning (Tutorial 1), IROS’24</div>
+            <div class="news-meta">
+              <span class="label">Event</span>
+              <span class="label">IROS 2024</span>
+              <span class="muted-small">2024</span>
+            </div>
+            <p class="news-body">Tutorial on energy-based interaction control and interactive learning.</p>
+          </li>
+
+          <li id="news-iros24-tutorial2" class="news-item" data-year="2024" data-type="event"
+            data-tags="event, IROS, tutorial, interaction control, human-robot interaction" data-date="2024-10-01">
+            <div class="news-title">Foundations of interaction control for contact robots (part I): Interaction control
+              in humans and with robots (Tutorial 2), IROS’24</div>
+            <div class="news-meta">
+              <span class="label">Event</span>
+              <span class="label">IROS 2024</span>
+              <span class="muted-small">2024</span>
+            </div>
+            <p class="news-body">Tutorial covering fundamentals of human and robot interaction control.</p>
+          </li>
+
+          <li id="news-iros24-formal-methods-ws-2" class="news-item" data-year="2024" data-type="event"
+            data-tags="event, IROS, workshop, formal methods, design, control" data-date="2024-10-01">
+            <div class="news-title">The 2nd Workshop on Formal Methods Techniques in Robotics Systems: Design and
+              Control, IROS’24</div>
+            <div class="news-meta">
+              <span class="label">Event</span>
+              <span class="label">IROS 2024</span>
+              <span class="muted-small">2024</span>
+            </div>
+            <p class="news-body">Workshop on verified design and control for robotics.</p>
+          </li>
+
+          <li id="news-iros24-mobile-manipulation-finalist" class="news-item" data-year="2024" data-type="award"
+            data-tags="award, IROS, IROS 2024, mobile manipulation, paper finalist" data-date="2024-10-01">
+            <div class="news-title">Best Mobile Manipulation Paper Award — Finalist, IROS 2024</div>
+            <div class="news-meta">
+              <span class="label label-success">Award</span>
+              <span class="label">IROS 2024</span>
+              <span class="muted-small">2024</span>
+            </div>
+            <p class="news-body">Recognized as a finalist for the Best Mobile Manipulation Paper at IROS 2024.</p>
+          </li>
+
+          <li id="news-iros24-new-generation-star" class="news-item" data-year="2024" data-type="award"
+            data-tags="award, IROS, IROS 2024, project recognition, new generation star" data-date="2024-10-02">
+            <div class="news-title">New Generation Star Project — IROS 2024</div>
+            <div class="news-meta">
+              <span class="label label-success">Award</span>
+              <span class="label">IROS 2024</span>
+              <span class="muted-small">2024</span>
+            </div>
+            <p class="news-body">Project highlighted as a New Generation Star at IROS 2024.</p>
+          </li>
+
+          <li id="news-ral23-best-paper-award" class="news-item" data-year="2024" data-type="award"
+            data-tags="award, RA-L, IEEE, best paper, 2023" data-date="2024-05-01">
+            <div class="news-title">IEEE Robotics &amp; Automation Letters (RA-L) 2023 Best Paper Award</div>
+            <div class="news-meta">
+              <span class="label label-success">Award</span>
+              <span class="label">IEEE RA-L</span>
+              <span class="muted-small">2024</span>
+            </div>
+            <p class="news-body">The 2023 RA-L Best Paper Award, announced in 2024.</p>
+          </li>
+
+          <li id="news-innovation-radar-bsa" class="news-item" data-year="2024" data-type="award"
+            data-tags="award, Innovation Radar, European Commission, actuation, BSA, compliance" data-date="2024-04-01">
+            <div class="news-title">European Commission Innovation Radar Recognition — Bi-Stiffness Actuator (BSA)</div>
+            <div class="news-meta">
+              <span class="label label-success">Award</span>
+              <span class="label">EU Innovation</span>
+              <span class="muted-small">2024</span>
+            </div>
+            <p class="news-body">Recognized for the BSA enabling compliant, gravity-aware, and inertia-coupled behaviors
+              in elastic-joint robots.</p>
+          </li>
+        </ul>
+        <!-- ===================== 2023 ===================== -->
+        <h3 class="year-heading" data-year-heading="2023">2023</h3>
+        <ul class="news-list" data-year-list="2023">
+          <li id="news-iros23-formal-methods-ws-1" class="news-item" data-year="2023" data-type="event"
+            data-tags="event, IROS, workshop, formal methods, design, control" data-date="2023-10-01">
+            <div class="news-title">The 1st Workshop on Formal Methods Techniques in Robotics Systems: Design and
+              Control, IROS’23</div>
+            <div class="news-meta">
+              <span class="label">Event</span>
+              <span class="label">IROS 2023</span>
+              <span class="muted-small">2023</span>
+            </div>
+            <p class="news-body">Kickoff workshop on formal methods for robotics systems.</p>
+          </li>
+
+          <li id="news-axelby-award-2023" class="news-item" data-year="2023" data-type="award"
+            data-tags="award, IEEE CSS, Axelby, TAC, control" data-date="2023-06-01">
+            <div class="news-title">IEEE CSS George S. Axelby Outstanding Paper Award — 2023</div>
+            <div class="news-meta">
+              <span class="label label-success">Award</span>
+              <span class="label">IEEE TAC</span>
+              <span class="muted-small">2023</span>
+            </div>
+            <p class="news-body">Awarded for the best article in the IEEE Transactions on Automatic Control.</p>
+          </li>
+
+          <li id="news-ram-cover-2023" class="news-item" data-year="2023" data-type="media"
+            data-tags="media, IEEE, Robotics and Automation Magazine, cover" data-date="2023-08-01">
+            <div class="news-title">IEEE Robotics &amp; Automation Magazine — Cover Feature</div>
+            <div class="news-meta">
+              <span class="label label-warning">Media</span>
+              <span class="label">IEEE RAM</span>
+              <span class="muted-small">2023</span>
+            </div>
+            <p class="news-body">Featured on the cover of IEEE Robotics &amp; Automation Magazine.</p>
+          </li>
+        </ul>
+        <!-- ===================== 2021 ===================== -->
+        <h3 class="year-heading" data-year-heading="2021">2021</h3>
+        <ul class="news-list" data-year-list="2021">
+          <li id="news-2021-mirmi-summer-school" class="news-item" data-year="2021" data-type="event"
+            data-tags="event, summer school, MIRMI, TUM, Imperial College London, robotics forum"
+            data-date="2021-07-01">
+            <div class="news-title">Munich Excellence Initiative COMET: Joint Publications Workshop — 2021 Robotics
+              Forum &amp; MIRMI Summer School (Imperial College London × Technical University of Munich)</div>
+            <div class="news-meta">
+              <span class="label">Event</span>
+              <span class="label">Summer School</span>
+              <span class="muted-small">2021</span>
+            </div>
+            <p class="news-body">Joint summer school and publications workshop between Imperial and TUM.</p>
+          </li>
+        </ul>
+
+        <!-- ===================== 2020 ===================== -->
+        <h3 class="year-heading" data-year-heading="2020">2020</h3>
+        <ul class="news-list" data-year-list="2020">
+          <li id="news-2020-icl-msrm-online-ws" class="news-item" data-year="2020" data-type="event"
+            data-tags="event, online workshop, Imperial College London, TUM, MSRM" data-date="2020-11-01">
+            <div class="news-title">ICL–MSRM Academic Online Workshop: Joint Workshop between Imperial College London
+              and Technical University of Munich</div>
+            <div class="news-meta">
+              <span class="label">Event</span>
+              <span class="label">Online Workshop</span>
+              <span class="muted-small">2020</span>
+            </div>
+            <p class="news-body">Academic workshop jointly organized by Imperial and TUM.</p>
+          </li>
+        </ul>
+        <!-- ===================== 2018 ===================== -->
+        <h3 class="year-heading" data-year-heading="2018">2018</h3>
+        <ul class="news-list" data-year-list="2018">
+          <li id="news-icc18-student-paper-finalist" class="news-item" data-year="2018" data-type="award"
+            data-tags="award, ICC, Indian Control Conference, student paper finalist" data-date="2018-01-04">
+            <div class="news-title">Best Student Paper Award — Finalist, Indian Control Conference (ICC’18)</div>
+            <div class="news-meta">
+              <span class="label label-success">Award</span>
+              <span class="label">ICC 2018</span>
+              <span class="muted-small">2018</span>
+            </div>
+            <p class="news-body">Finalist for Best Student Paper at the 4th Indian Control Conference.</p>
+          </li>
+        </ul>
+
+        <!-- ===================== 2016 ===================== -->
+        <h3 class="year-heading" data-year-heading="2016">2016</h3>
+        <ul class="news-list" data-year-list="2016">
+          <li id="news-2016-daad-scholarship" class="news-item" data-year="2016" data-type="award"
+            data-tags="award, scholarship, DAAD, Germany" data-date="2016-01-01">
+            <div class="news-title">Doctorate Scholarship — German Academic Exchange Service (DAAD)</div>
+            <div class="news-meta">
+              <span class="label label-success">Award</span>
+              <span class="label">DAAD 2016</span>
+              <span class="muted-small">2016</span>
+            </div>
+            <p class="news-body">Awarded a DAAD scholarship to pursue doctoral studies.</p>
+          </li>
+        </ul>
+
+        <!-- ===================== 2013 ===================== -->
+        <h3 class="year-heading" data-year-heading="2013">2013</h3>
+        <ul class="news-list" data-year-list="2013">
+          <li id="news-2013-mohesr-scholarship" class="news-item" data-year="2013" data-type="award"
+            data-tags="award, scholarship, Ministry of Higher Education and Scientific Research" data-date="2013-06-01">
+            <div class="news-title">Study Abroad Scholarship — Ministry of Higher Education &amp; Scientific Research
+            </div>
+            <div class="news-meta">
+              <span class="label label-success">Award</span>
+              <span class="label">Scholarship</span>
+              <span class="muted-small">2013</span>
+            </div>
+            <p class="news-body">Received a study-abroad scholarship award.</p>
+          </li>
+        </ul>
+
+        <!-- ===================== 2008 ===================== -->
+        <h3 class="year-heading" data-year-heading="2008">2008</h3>
+        <ul class="news-list" data-year-list="2008">
+          <li id="news-2008-bsc-first-place" class="news-item" data-year="2008" data-type="award"
+            data-tags="award, academic honor, BSc, electrical engineering" data-date="2008-06-01">
+            <div class="news-title">First Place (High Honors) — B.Sc. Electrical Engineering</div>
+            <div class="news-meta">
+              <span class="label label-success">Award</span>
+              <span class="label">Undergraduate</span>
+              <span class="muted-small">2008</span>
+            </div>
+            <p class="news-body">Graduated first in class with high honors in Electrical Engineering.</p>
+          </li>
+        </ul>
+
+        <p><a href="#top">Back to top ↑</a></p>
       </div>
-    </footer>
+    </div>
 
-    <!-- JavaScript (placed at the end for faster page loads) -->
-    <script src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-      (function() {
-        function normalize(s){ return (s || '').toString().toLowerCase(); }
+    <hr>
+  </div>
 
-        // Build Year & Tag filter options from items
-        function populateFilters() {
-          var years = {}, tags = {};
-          $('.news-item').each(function() {
-            years[$(this).data('year')] = true;
-            var tagStr = ($(this).data('tags') || '').toString();
-            tagStr.split(',').map(function(t){ return $.trim(t); }).forEach(function(t){
-              if (t) { tags[t] = true; }
-            });
+  <footer id="footer">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span5">
+          <h3>Contact Information</h3>
+          <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
+          <p><b>Phone: </b>999-999-9999</p>
+          <p><b>Cell: </b>999-999-9999</p>
+          <a href="mailto:your.email@uni.edu">Email</a>
+        </div>
+        <div class="span2">
+          <a href="https://mybrandnewlogo.com/"><img src="thumbs/AIRoCS_logo.jpg" alt="research-lab-logo" /></a>
+        </div>
+        <div class="span5">
+          <h3>Address</h3>
+          <p>AIRoCS Laboratory<br>
+            Masdar City - SE45 05<br>
+            Abu Dhabi, UAE
+          </p>
+          <a href="http://maps.google.com/">Show Map</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript (placed at the end for faster page loads) -->
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    (function () {
+      function normalize(s) { return (s || '').toString().toLowerCase(); }
+
+      // Build Year & Tag filter options from items
+      function populateFilters() {
+        var years = {}, tags = {};
+        $('.news-item').each(function () {
+          years[$(this).data('year')] = true;
+          var tagStr = ($(this).data('tags') || '').toString();
+          tagStr.split(',').map(function (t) { return $.trim(t); }).forEach(function (t) {
+            if (t) { tags[t] = true; }
           });
+        });
 
-          var yearList = Object.keys(years).sort(function(a,b){ return b - a; });
-          var tagList  = Object.keys(tags).sort(function(a,b){ return a.toLowerCase() > b.toLowerCase() ? 1 : -1; });
+        var yearList = Object.keys(years).sort(function (a, b) { return b - a; });
+        var tagList = Object.keys(tags).sort(function (a, b) { return a.toLowerCase() > b.toLowerCase() ? 1 : -1; });
 
-          var $yearSel = $('#yearFilter');
-          yearList.forEach(function(y){ $yearSel.append('<option value="'+y+'">'+y+'</option>'); });
+        var $yearSel = $('#yearFilter');
+        yearList.forEach(function (y) { $yearSel.append('<option value="' + y + '">' + y + '</option>'); });
 
-          var $tagSel = $('#tagFilter');
-          tagList.forEach(function(t){ $tagSel.append('<option value="'+t+'">'+t+'</option>'); });
-        }
+        var $tagSel = $('#tagFilter');
+        tagList.forEach(function (t) { $tagSel.append('<option value="' + t + '">' + t + '</option>'); });
+      }
 
-        function applyFilters() {
-          var q = normalize($('#searchInput').val());
-          var year = $('#yearFilter').val();
-          var type = $('#typeFilter').val();
-          var tag  = $('#tagFilter').val();
+      function applyFilters() {
+        var q = normalize($('#searchInput').val());
+        var year = $('#yearFilter').val();
+        var type = $('#typeFilter').val();
+        var tag = $('#tagFilter').val();
 
-          $('.news-item').each(function() {
-            var $it = $(this);
-            var matchesYear = (year === 'all') || ($it.data('year').toString() === year);
-            var matchesType = (type === 'all') || (normalize($it.data('type')) === normalize(type));
-            var matchesTag  = (tag === 'all')  || (normalize(($it.data('tags')||'')).indexOf(normalize(tag)) !== -1);
-            var text = normalize($it.text());
-            var matchesQuery = !q || text.indexOf(q) !== -1;
+        $('.news-item').each(function () {
+          var $it = $(this);
+          var matchesYear = (year === 'all') || ($it.data('year').toString() === year);
+          var matchesType = (type === 'all') || (normalize($it.data('type')) === normalize(type));
+          var matchesTag = (tag === 'all') || (normalize(($it.data('tags') || '')).indexOf(normalize(tag)) !== -1);
+          var text = normalize($it.text());
+          var matchesQuery = !q || text.indexOf(q) !== -1;
 
-            $it.toggle(matchesYear && matchesType && matchesTag && matchesQuery);
+          $it.toggle(matchesYear && matchesType && matchesTag && matchesQuery);
+        });
+
+        // Hide year headings/lists with no visible items
+        $('[data-year-list]').each(function () {
+          var $list = $(this);
+          var year = $list.data('year-list');
+          var anyVisible = $list.find('.news-item:visible').length > 0;
+          $('[data-year-heading="' + year + '"]').toggle(anyVisible);
+          $list.toggle(anyVisible);
+        });
+      }
+
+      function sortWithinYear() {
+        // Optional: sort items in each year list by data-date (desc)
+        $('[data-year-list]').each(function () {
+          var $list = $(this);
+          var items = $list.children('.news-item').get();
+          items.sort(function (a, b) {
+            var da = new Date($(a).data('date') || '1970-01-01');
+            var db = new Date($(b).data('date') || '1970-01-01');
+            return db - da; // newest first
           });
+          $.each(items, function (_, li) { $list.append(li); });
+        });
+      }
 
-          // Hide year headings/lists with no visible items
-          $('[data-year-list]').each(function(){
-            var $list = $(this);
-            var year = $list.data('year-list');
-            var anyVisible = $list.find('.news-item:visible').length > 0;
-            $('[data-year-heading="'+year+'"]').toggle(anyVisible);
-            $list.toggle(anyVisible);
-          });
-        }
+      function wireUp() {
+        populateFilters();
+        sortWithinYear();
+        $('#searchInput').on('keyup', applyFilters);
+        $('#yearFilter, #typeFilter, #tagFilter').on('change', applyFilters);
+        $('#clearBtn').on('click', function () {
+          $('#searchInput').val('');
+          $('#yearFilter').val('all');
+          $('#typeFilter').val('all');
+          $('#tagFilter').val('all');
+          applyFilters();
+        });
 
-        function sortWithinYear() {
-          // Optional: sort items in each year list by data-date (desc)
-          $('[data-year-list]').each(function(){
-            var $list = $(this);
-            var items = $list.children('.news-item').get();
-            items.sort(function(a, b){
-              var da = new Date($(a).data('date') || '1970-01-01');
-              var db = new Date($(b).data('date') || '1970-01-01');
-              return db - da; // newest first
-            });
-            $.each(items, function(_, li){ $list.append(li); });
-          });
-        }
-
-        function wireUp() {
-          populateFilters();
-          sortWithinYear();
-          $('#searchInput').on('keyup', applyFilters);
-          $('#yearFilter, #typeFilter, #tagFilter').on('change', applyFilters);
-          $('#clearBtn').on('click', function(){
-            $('#searchInput').val('');
-            $('#yearFilter').val('all');
-            $('#typeFilter').val('all');
-            $('#tagFilter').val('all');
-            applyFilters();
-          });
-
-          // Support linking to a specific news item by hash (e.g., news.html#news-icra25-oral)
-          if (window.location.hash) {
-            var $target = $(window.location.hash);
-            if ($target.length) {
-              $('html, body').scrollTop($target.offset().top - 10);
-              $target.addClass('highlight');
-              setTimeout(function(){ $target.removeClass('highlight'); }, 3000);
-            }
+        // Support linking to a specific news item by hash (e.g., news.html#news-icra25-oral)
+        if (window.location.hash) {
+          var $target = $(window.location.hash);
+          if ($target.length) {
+            $('html, body').scrollTop($target.offset().top - 10);
+            $target.addClass('highlight');
+            setTimeout(function () { $target.removeClass('highlight'); }, 3000);
           }
-
-          applyFilters(); // initial
         }
 
-        if (window.jQuery) { jQuery(wireUp); }
-      })();
-    </script>
-  </body>
+        applyFilters(); // initial
+      }
+
+      if (window.jQuery) { jQuery(wireUp); }
+    })();
+  </script>
+</body>
+
 </html>

@@ -1,103 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Gallery</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gallery | AIRoCS Lab | Mohamed bin Zayed University of Artificial Intelligence">
-    <meta name="author" content="AIRoCS Lab">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="css/theme.css" rel="stylesheet">
-    <style>
-      /* Lightweight, Bootstrap-2 friendly tweaks */
-      .subhead h1 { font-size: 1.6rem; line-height: 1.2; margin: .4em 0; }
-      .gallery-toolbar { margin: 10px 0 18px; }
-      .gallery-toolbar .controls { margin-bottom: 10px; }
-      .year-heading { margin: 20px 0 10px; border-bottom: 1px solid #ddd; }
-      /* Card-ish tiles */
-      .gi { margin-bottom: 12px; }
-      .gi .tile {
-        background: #fff; border: 1px solid #eee; border-radius: 4px;
-        overflow: hidden; height: 100%;
-      }
-      .gi .thumb-wrap { position: relative; aspect-ratio: 4/3; background:#fafafa; }
-      .gi img.thumb {
-        width: 100%; height: 100%; object-fit: cover; display: block;
-      }
-      .gi .tile-body { padding: 8px 10px; }
-      .gi .title { font-weight: 600; line-height: 1.25; margin: 0 0 4px; }
-      .gi .meta { color:#666; font-size: 12px; margin-bottom: 6px; }
-      .gi .labels .label { margin-right: 6px; margin-bottom: 4px; display: inline-block; }
-      .play-badge {
-        position: absolute; right: 8px; bottom: 8px;
-        background: rgba(0,0,0,.6); color:#fff; padding: 2px 6px; border-radius: 3px;
-        font-size: 12px;
-      }
-      /* Modal media */
-      #mediaModal .modal-body { max-height: 72vh; overflow-y: auto; }
-      #mediaModal .modal-media { width: 100%; height: auto; }
-      #mediaModal .caption { margin-top: 8px; color:#555; }
-      #mediaModal .credit { font-size: 12px; color:#777; }
-      @media (max-width: 767px) {
-        .gi .tile-body { padding: 8px; }
-        #mediaModal .modal-body { max-height: none; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header class="jumbotron subhead" id="overview">
-        <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
-        <h1>Artificial Intelligence Robotics and Control Systems Laboratory (AIRoCS)</h1>
-      </header>
 
-      <div class="masthead">
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <ul class="nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="people.html">People</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li class="active"><a href="#">Gallery</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="teaching.html">Teaching</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </div>
+<head>
+  <meta charset="utf-8">
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gallery | AIRoCS Lab | Mohamed bin Zayed University of Artificial Intelligence">
+  <meta name="author" content="AIRoCS Lab">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <style>
+    /* Lightweight, Bootstrap-2 friendly tweaks */
+    .subhead h1 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin: .4em 0;
+    }
+
+    .gallery-toolbar {
+      margin: 10px 0 18px;
+    }
+
+    .gallery-toolbar .controls {
+      margin-bottom: 10px;
+    }
+
+    .year-heading {
+      margin: 20px 0 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Card-ish tiles */
+    .gi {
+      margin-bottom: 12px;
+    }
+
+    .gi .tile {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .gi .thumb-wrap {
+      position: relative;
+      aspect-ratio: 4/3;
+      background: #fafafa;
+    }
+
+    .gi img.thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gi .tile-body {
+      padding: 8px 10px;
+    }
+
+    .gi .title {
+      font-weight: 600;
+      line-height: 1.25;
+      margin: 0 0 4px;
+    }
+
+    .gi .meta {
+      color: #666;
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    .gi .labels .label {
+      margin-right: 6px;
+      margin-bottom: 4px;
+      display: inline-block;
+    }
+
+    .play-badge {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      background: rgba(0, 0, 0, .6);
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+
+    /* Modal media */
+    #mediaModal .modal-body {
+      max-height: 72vh;
+      overflow-y: auto;
+    }
+
+    #mediaModal .modal-media {
+      width: 100%;
+      height: auto;
+    }
+
+    #mediaModal .caption {
+      margin-top: 8px;
+      color: #555;
+    }
+
+    #mediaModal .credit {
+      font-size: 12px;
+      color: #777;
+    }
+
+    @media (max-width: 767px) {
+      .gi .tile-body {
+        padding: 8px;
+      }
+
+      #mediaModal .modal-body {
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="jumbotron subhead" id="overview">
+      <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
+      <h1>Artificial Intelligence Robotics and Control Systems Laboratory (AIRoCS)</h1>
+    </header>
+
+    <div class="masthead">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <ul class="nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="people.html">People</a></li>
+              <li><a href="research.html">Research</a></li>
+              <li><a href="publications.html">Publications</a></li>
+              <li class="active"><a href="#">Gallery</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="teaching.html">Teaching</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
 
-      <hr>
+    <hr>
 
-      <!-- Controls -->
-      <div class="gallery-toolbar">
-        <form class="form-inline controls">
-          <input id="searchInput" type="text" class="input-xxlarge" placeholder="Search title, people, tags…">
-          <select id="yearFilter" class="input-small">
-            <option value="all">All years</option>
-          </select>
-          <select id="typeFilter" class="input-medium">
-            <option value="all">All types</option>
-            <option value="photo">Photo</option>
-            <option value="video">Video</option>
-            <option value="demo">Demo</option>
-          </select>
-          <select id="tagFilter" class="input-medium">
-            <option value="all">All tags</option>
-          </select>
-          <button id="clearBtn" type="button" class="btn">Clear</button>
-        </form>
-      </div>
+    <!-- Controls -->
+    <div class="gallery-toolbar">
+      <form class="form-inline controls">
+        <input id="searchInput" type="text" class="input-xxlarge" placeholder="Search title, people, tags…">
+        <select id="yearFilter" class="input-small">
+          <option value="all">All years</option>
+        </select>
+        <select id="typeFilter" class="input-medium">
+          <option value="all">All types</option>
+          <option value="photo">Photo</option>
+          <option value="video">Video</option>
+          <option value="demo">Demo</option>
+        </select>
+        <select id="tagFilter" class="input-medium">
+          <option value="all">All tags</option>
+        </select>
+        <button id="clearBtn" type="button" class="btn">Clear</button>
+      </form>
+    </div>
 
-      <!-- ===================== 2025 ===================== -->
-      <h3 class="year-heading" data-year-heading="2025">2025</h3>
-      <div class="row-fluid" data-year-row="2025">
-        <!-- Aerial manipulation photo -->
-        <!-- <div class="span3 gi" data-year="2025" data-type="photo" data-tags="aerial manipulation, quadrotor, lab" data-title="Aerial manipulation platform">
+    <!-- ===================== 2025 ===================== -->
+    <h3 class="year-heading" data-year-heading="2025">2025</h3>
+    <div class="row-fluid" data-year-row="2025">
+      <!-- Aerial manipulation photo -->
+      <!-- <div class="span3 gi" data-year="2025" data-type="photo" data-tags="aerial manipulation, quadrotor, lab" data-title="Aerial manipulation platform">
           <div class="tile">
             <a href="#" class="gi-link"
                data-kind="image"
@@ -120,8 +198,8 @@
           </div>
         </div> -->
 
-        <!-- Vision-Language Navigation (video, e.g., YouTube) -->
-        <!-- <div class="span3 gi" data-year="2025" data-type="video" data-tags="vision-language, navigation, icra" data-title="VLN in dynamic environments">
+      <!-- Vision-Language Navigation (video, e.g., YouTube) -->
+      <!-- <div class="span3 gi" data-year="2025" data-type="video" data-tags="vision-language, navigation, icra" data-title="VLN in dynamic environments">
           <div class="tile">
             <a href="#" class="gi-link"
                data-kind="youtube"
@@ -144,8 +222,8 @@
           </div>
         </div> -->
 
-        <!-- Swarm demo (local mp4) -->
-        <!-- <div class="span3 gi" data-year="2025" data-type="demo" data-tags="swarms, robustness, wind" data-title="Swarm robustness field test">
+      <!-- Swarm demo (local mp4) -->
+      <!-- <div class="span3 gi" data-year="2025" data-type="demo" data-tags="swarms, robustness, wind" data-title="Swarm robustness field test">
           <div class="tile">
             <a href="#" class="gi-link"
                data-kind="video"
@@ -168,216 +246,218 @@
           </div>
         </div> -->
 
-        <!-- Safe RL photo -->
-       <div class="span5 gi" data-year="2025" data-type="photo"  data-title="Launch of the lab">
+      <!-- Safe RL photo -->
+      <div class="span5 gi" data-year="2025" data-type="photo" data-title="Launch of the lab">
         <figure class="tile">
           <a href="images/LAB_L2.jpeg" target="_blank" rel="noopener">
             <img class="thumb" src="images/LAB_L2.jpeg" alt="Lab Launch" loading="lazy">
           </a>
-            <!-- <a href="images/LAb_L1.jpeg" target="_blank" rel="noopener">
+          <!-- <a href="images/LAb_L1.jpeg" target="_blank" rel="noopener">
             <img class="thumb" src="images/LAb_L1.jpeg" alt="Lab Launch" loading="lazy">
              </a> -->
-              <figcaption class="tile-caption">
-                <div class="title">Lab Launch</div>
-                 <div class="meta">2025 · Photo</div>
-                <div class="labels">
-               <span class="label label-important">Robot</span>
-             </div>
-            </figcaption>
-          </figure>
-        </div>
-
+          <figcaption class="tile-caption">
+            <div class="title">Lab Launch</div>
+            <div class="meta">2025 · Photo</div>
+            <div class="labels">
+              <span class="label label-important">Robot</span>
+            </div>
+          </figcaption>
+        </figure>
       </div>
 
-
-      <p><a href="#top">Back to top ↑</a></p>
-
-      <hr>
     </div>
 
-    <footer id="footer">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span5">
-            <h3>Contact Information</h3>
-            <p><b>Office Hours: </b>Monday–Friday (9.00am–5.00pm)</p>
-            <a href="mailto:abdallarobotlab@gmail.com">Email</a>
-          </div>
-          <div class="span2">
-            <a href="https://abdallaswikirrobotlab.github.io/Robot_Lab_Website/">
-              <img src="thumbs/AIRoCS_logo.jpg" alt="AIRoCS lab logo"/>
-            </a>
-          </div>
-          <div class="span5">
-            <h3>Address</h3>
-            <p>AIRoCS Laboratory<br>Masdar City - SE45 05<br>Abu Dhabi, UAE</p>
-            <a href="https://maps.app.goo.gl/gb7csNPpujr68AkG7">Show Map</a>
-          </div>
+
+    <p><a href="#top">Back to top ↑</a></p>
+
+    <hr>
+  </div>
+
+  <footer id="footer">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span5">
+          <h3>Contact Information</h3>
+          <p><b>Office Hours: </b>Monday–Friday (9.00am–5.00pm)</p>
+          <a href="mailto:abdallarobotlab@gmail.com">Email</a>
+        </div>
+        <div class="span2">
+          <a href="https://abdallaswikirrobotlab.github.io/Robot_Lab_Website/">
+            <img src="thumbs/AIRoCS_logo.jpg" alt="AIRoCS lab logo" />
+          </a>
+        </div>
+        <div class="span5">
+          <h3>Address</h3>
+          <p>AIRoCS Laboratory<br>Masdar City - SE45 05<br>Abu Dhabi, UAE</p>
+          <a href="https://maps.app.goo.gl/gb7csNPpujr68AkG7">Show Map</a>
         </div>
       </div>
-    </footer>
-
-    <!-- Modal -->
-    <div id="mediaModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="mediaTitle" aria-hidden="true">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
-        <h3 id="mediaTitle">Preview</h3>
-      </div>
-      <div class="modal-body">
-        <!-- Media injected here -->
-      </div>
-      <div class="modal-footer">
-        <a id="downloadLink" class="btn" href="#" download>Download</a>
-        <a id="prevBtn" class="btn">‹ Prev</a>
-        <a id="nextBtn" class="btn">Next ›</a>
-        <a class="btn btn-primary" data-dismiss="modal">Close</a>
-      </div>
     </div>
+  </footer>
 
-    <!-- JavaScript -->
-    <script src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-      (function() {
-        function norm(s){ return (s || '').toString().toLowerCase(); }
+  <!-- Modal -->
+  <div id="mediaModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="mediaTitle"
+    aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+      <h3 id="mediaTitle">Preview</h3>
+    </div>
+    <div class="modal-body">
+      <!-- Media injected here -->
+    </div>
+    <div class="modal-footer">
+      <a id="downloadLink" class="btn" href="#" download>Download</a>
+      <a id="prevBtn" class="btn">‹ Prev</a>
+      <a id="nextBtn" class="btn">Next ›</a>
+      <a class="btn btn-primary" data-dismiss="modal">Close</a>
+    </div>
+  </div>
 
-        // Build filter options (year + tag) from tiles
-        function populateFilters() {
-          var years = {}, tags = {};
-          $('.gi').each(function() {
-            years[$(this).data('year')] = true;
-            var tagStr = ($(this).data('tags') || '').toString();
-            tagStr.split(',').map(function(t){ return $.trim(t); }).forEach(function(t){
-              if (t) tags[t] = true;
-            });
+  <!-- JavaScript -->
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    (function () {
+      function norm(s) { return (s || '').toString().toLowerCase(); }
+
+      // Build filter options (year + tag) from tiles
+      function populateFilters() {
+        var years = {}, tags = {};
+        $('.gi').each(function () {
+          years[$(this).data('year')] = true;
+          var tagStr = ($(this).data('tags') || '').toString();
+          tagStr.split(',').map(function (t) { return $.trim(t); }).forEach(function (t) {
+            if (t) tags[t] = true;
           });
-          var yearList = Object.keys(years).sort(function(a,b){ return b - a; });
-          var tagList = Object.keys(tags).sort(function(a,b){ return a.toLowerCase() > b.toLowerCase() ? 1 : -1; });
+        });
+        var yearList = Object.keys(years).sort(function (a, b) { return b - a; });
+        var tagList = Object.keys(tags).sort(function (a, b) { return a.toLowerCase() > b.toLowerCase() ? 1 : -1; });
 
-          var $y = $('#yearFilter'), $t = $('#tagFilter');
-          yearList.forEach(function(y){ $y.append('<option value="'+y+'">'+y+'</option>'); });
-          tagList.forEach(function(t){ $t.append('<option value="'+t+'">'+t+'</option>'); });
-        }
+        var $y = $('#yearFilter'), $t = $('#tagFilter');
+        yearList.forEach(function (y) { $y.append('<option value="' + y + '">' + y + '</option>'); });
+        tagList.forEach(function (t) { $t.append('<option value="' + t + '">' + t + '</option>'); });
+      }
 
-        // Apply text/year/type/tag filters
-        function applyFilters() {
-          var q = norm($('#searchInput').val());
-          var y = $('#yearFilter').val();
-          var type = $('#typeFilter').val();
-          var tag = $('#tagFilter').val();
+      // Apply text/year/type/tag filters
+      function applyFilters() {
+        var q = norm($('#searchInput').val());
+        var y = $('#yearFilter').val();
+        var type = $('#typeFilter').val();
+        var tag = $('#tagFilter').val();
 
-          $('.gi').each(function() {
-            var $it = $(this);
-            var matchesYear = (y === 'all') || ($it.data('year').toString() === y);
-            var matchesType = (type === 'all') || (norm($it.data('type')) === norm(type));
-            var matchesTag  = (tag  === 'all') || (norm(($it.data('tags')||'')).indexOf(norm(tag)) !== -1);
-            var matchesQ    = !q || norm($it.data('title') + ' ' + $it.text()).indexOf(q) !== -1;
-            $it.toggle(matchesYear && matchesType && matchesTag && matchesQ);
-          });
-
-          // Hide headings with no visible items
-          $('[data-year-row]').each(function(){
-            var year = $(this).data('year-row');
-            var any = $(this).find('.gi:visible').length > 0;
-            $('[data-year-heading="'+year+'"]').toggle(any);
-            $(this).toggle(any);
-          });
-        }
-
-        // Clear
-        $('#clearBtn').on('click', function(){
-          $('#searchInput').val('');
-          $('#yearFilter').val('all');
-          $('#typeFilter').val('all');
-          $('#tagFilter').val('all');
-          applyFilters();
+        $('.gi').each(function () {
+          var $it = $(this);
+          var matchesYear = (y === 'all') || ($it.data('year').toString() === y);
+          var matchesType = (type === 'all') || (norm($it.data('type')) === norm(type));
+          var matchesTag = (tag === 'all') || (norm(($it.data('tags') || '')).indexOf(norm(tag)) !== -1);
+          var matchesQ = !q || norm($it.data('title') + ' ' + $it.text()).indexOf(q) !== -1;
+          $it.toggle(matchesYear && matchesType && matchesTag && matchesQ);
         });
 
-        // Wire up inputs
-        $('#searchInput').on('keyup', applyFilters);
-        $('#yearFilter, #typeFilter, #tagFilter').on('change', applyFilters);
+        // Hide headings with no visible items
+        $('[data-year-row]').each(function () {
+          var year = $(this).data('year-row');
+          var any = $(this).find('.gi:visible').length > 0;
+          $('[data-year-heading="' + year + '"]').toggle(any);
+          $(this).toggle(any);
+        });
+      }
 
-        populateFilters();
+      // Clear
+      $('#clearBtn').on('click', function () {
+        $('#searchInput').val('');
+        $('#yearFilter').val('all');
+        $('#typeFilter').val('all');
+        $('#tagFilter').val('all');
         applyFilters();
+      });
 
-        /* ---------- Modal viewer with keyboard navigation ---------- */
-        var currentIndex = -1;
+      // Wire up inputs
+      $('#searchInput').on('keyup', applyFilters);
+      $('#yearFilter, #typeFilter, #tagFilter').on('change', applyFilters);
 
-        function visibleItems(){
-          return $('.gi:visible .gi-link').map(function(i, el){ return $(el); }).get();
+      populateFilters();
+      applyFilters();
+
+      /* ---------- Modal viewer with keyboard navigation ---------- */
+      var currentIndex = -1;
+
+      function visibleItems() {
+        return $('.gi:visible .gi-link').map(function (i, el) { return $(el); }).get();
+      }
+
+      function openAt(index) {
+        var items = visibleItems();
+        if (!items.length) return;
+        if (index < 0) index = items.length - 1;
+        if (index >= items.length) index = 0;
+        currentIndex = index;
+
+        var $a = items[currentIndex];
+        var $card = $a.closest('.gi');
+        var title = $card.data('title') || 'Preview';
+        var kind = $a.data('kind'); // image | video | youtube
+        var caption = $a.data('caption') || '';
+        var credit = $a.data('credit') || '';
+        var $body = $('#mediaModal .modal-body').empty();
+        $('#mediaTitle').text(title);
+
+        // Build media element
+        if (kind === 'image') {
+          var src = $a.data('full');
+          $('<img>', { class: 'modal-media', alt: title }).attr('src', src).appendTo($body);
+          $('#downloadLink').show().attr('href', $a.data('download') || src);
+        } else if (kind === 'video') {
+          var vsrc = $a.data('src');
+          var $vid = $('<video>', { class: 'modal-media', controls: true, playsinline: true });
+          $('<source>').attr('src', vsrc).attr('type', 'video/mp4').appendTo($vid);
+          $vid.appendTo($body);
+          $('#downloadLink').show().attr('href', vsrc);
+        } else if (kind === 'youtube') {
+          var embed = $a.data('embed');
+          var $iframe = $('<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"><iframe allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>');
+          $iframe.find('iframe').attr('src', embed);
+          $body.append($iframe);
+          $('#downloadLink').hide();
+        } else {
+          $body.text('Unsupported media type.');
+          $('#downloadLink').hide();
         }
 
-        function openAt(index){
-          var items = visibleItems();
-          if (!items.length) return;
-          if (index < 0) index = items.length - 1;
-          if (index >= items.length) index = 0;
-          currentIndex = index;
-
-          var $a = items[currentIndex];
-          var $card = $a.closest('.gi');
-          var title = $card.data('title') || 'Preview';
-          var kind = $a.data('kind'); // image | video | youtube
-          var caption = $a.data('caption') || '';
-          var credit  = $a.data('credit')  || '';
-          var $body = $('#mediaModal .modal-body').empty();
-          $('#mediaTitle').text(title);
-
-          // Build media element
-          if (kind === 'image') {
-            var src = $a.data('full');
-            $('<img>', { class:'modal-media', alt:title }).attr('src', src).appendTo($body);
-            $('#downloadLink').show().attr('href', $a.data('download') || src);
-          } else if (kind === 'video') {
-            var vsrc = $a.data('src');
-            var $vid = $('<video>', { class:'modal-media', controls:true, playsinline:true });
-            $('<source>').attr('src', vsrc).attr('type', 'video/mp4').appendTo($vid);
-            $vid.appendTo($body);
-            $('#downloadLink').show().attr('href', vsrc);
-          } else if (kind === 'youtube') {
-            var embed = $a.data('embed');
-            var $iframe = $('<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"><iframe allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>');
-            $iframe.find('iframe').attr('src', embed);
-            $body.append($iframe);
-            $('#downloadLink').hide();
-          } else {
-            $body.text('Unsupported media type.');
-            $('#downloadLink').hide();
-          }
-
-          // Caption & credit
-          if (caption || credit){
-            $('<div class="caption">').text(caption).appendTo($body);
-            if (credit) $('<div class="credit">').text(credit).appendTo($body);
-          }
-
-          $('#mediaModal').modal('show');
+        // Caption & credit
+        if (caption || credit) {
+          $('<div class="caption">').text(caption).appendTo($body);
+          if (credit) $('<div class="credit">').text(credit).appendTo($body);
         }
 
-        // Click to open
-        $(document).on('click', '.gi-link', function(e){
-          e.preventDefault();
-          var items = visibleItems();
-          var idx = items.indexOf($(this));
-          openAt(idx);
-        });
+        $('#mediaModal').modal('show');
+      }
 
-        // Prev/Next buttons
-        $('#prevBtn').on('click', function(){ openAt(currentIndex - 1); });
-        $('#nextBtn').on('click', function(){ openAt(currentIndex + 1); });
+      // Click to open
+      $(document).on('click', '.gi-link', function (e) {
+        e.preventDefault();
+        var items = visibleItems();
+        var idx = items.indexOf($(this));
+        openAt(idx);
+      });
 
-        // Keyboard navigation while modal is open
-        $('#mediaModal').on('shown', function(){
-          $(document).on('keydown.galleryNav', function(e){
-            if (e.which === 37) { $('#prevBtn').click(); } // left
-            if (e.which === 39) { $('#nextBtn').click(); } // right
-            if (e.which === 27) { $('#mediaModal').modal('hide'); } // esc
-          });
-        }).on('hidden', function(){
-          $(document).off('keydown.galleryNav');
-          $('#mediaModal .modal-body').empty();
+      // Prev/Next buttons
+      $('#prevBtn').on('click', function () { openAt(currentIndex - 1); });
+      $('#nextBtn').on('click', function () { openAt(currentIndex + 1); });
+
+      // Keyboard navigation while modal is open
+      $('#mediaModal').on('shown', function () {
+        $(document).on('keydown.galleryNav', function (e) {
+          if (e.which === 37) { $('#prevBtn').click(); } // left
+          if (e.which === 39) { $('#nextBtn').click(); } // right
+          if (e.which === 27) { $('#mediaModal').modal('hide'); } // esc
         });
-      })();
-    </script>
-  </body>
+      }).on('hidden', function () {
+        $(document).off('keydown.galleryNav');
+        $('#mediaModal .modal-body').empty();
+      });
+    })();
+  </script>
+</body>
+
 </html>

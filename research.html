@@ -1,133 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Research | AIRoCS Lab</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Research | AIRoCS Lab | Mohamed bin Zayed University of Artificial Intelligence">
-    <meta name="author" content="AIRoCS Lab">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="css/theme.css" rel="stylesheet">
-    <style>
-      /* Lightweight, Bootstrap-2 friendly tweaks */
-      .subhead h1 { font-size: 1.6rem; line-height: 1.2; margin: .4em 0; }
-      .hero-research {
-        padding: 16px; border: 1px solid #eee; border-radius: 6px; background: #fff; margin-bottom: 18px;
-      }
-      .focus-badges .label { margin: 3px 6px 0 0; display: inline-block; }
-      .filters { margin: 10px 0 18px; }
-      .filters .control-group { margin-right: 12px; margin-bottom: 8px; display: inline-block; }
-      .year-heading { margin: 22px 0 10px; border-bottom: 1px solid #ddd; }
-      /* Project cards */
-      .proj-list { list-style: none; margin: 0; padding: 0; }
-      .proj-item { border: 1px solid #eee; border-radius: 4px; background:#fff; padding: 12px; margin-bottom: 12px; }
-      .proj-title { font-weight: 600; margin: 6px 0 4px; line-height: 1.25; }
-      .proj-meta { color:#666; margin-bottom: 6px; }
-      .proj-tags .label { margin-right: 6px; }
-      .proj-thumb { width: 100%; max-height: 180px; object-fit: cover; border: 1px solid #f0f0f0; border-radius: 3px; background:#fafafa; }
-      .callout {
-        border-left: 4px solid #08c; background:#f6fbff; padding: 10px 12px; border-radius: 3px; margin: 12px 0 18px;
-      }
-      .muted-small { color:#777; font-size: 12px; }
-      .bs-docs-sidenav > li > a { padding: 8px 12px; }
-      @media (max-width: 767px) { .proj-item { padding: 10px; } .filters .control-group { display:block; margin-right:0; } }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header class="jumbotron subhead" id="overview">
-        <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
-        <h1>Artificial Intelligence Robotics and Control Systems Laboratory (AIRoCS)</h1>
-      </header>
 
-      <div class="masthead">
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <ul class="nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="people.html">People</a></li>
-                <li class="active"><a href="#">Research</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="teaching.html">Teaching</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </div>
+<head>
+  <meta charset="utf-8">
+  <title>Research | AIRoCS Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research | AIRoCS Lab | Mohamed bin Zayed University of Artificial Intelligence">
+  <meta name="author" content="AIRoCS Lab">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <style>
+    /* Lightweight, Bootstrap-2 friendly tweaks */
+    .subhead h1 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin: .4em 0;
+    }
+
+    .hero-research {
+      padding: 16px;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      background: #fff;
+      margin-bottom: 18px;
+    }
+
+    .focus-badges .label {
+      margin: 3px 6px 0 0;
+      display: inline-block;
+    }
+
+    .filters {
+      margin: 10px 0 18px;
+    }
+
+    .filters .control-group {
+      margin-right: 12px;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .year-heading {
+      margin: 22px 0 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Project cards */
+    .proj-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .proj-item {
+      border: 1px solid #eee;
+      border-radius: 4px;
+      background: #fff;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .proj-title {
+      font-weight: 600;
+      margin: 6px 0 4px;
+      line-height: 1.25;
+    }
+
+    .proj-meta {
+      color: #666;
+      margin-bottom: 6px;
+    }
+
+    .proj-tags .label {
+      margin-right: 6px;
+    }
+
+    .proj-thumb {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border: 1px solid #f0f0f0;
+      border-radius: 3px;
+      background: #fafafa;
+    }
+
+    .callout {
+      border-left: 4px solid #08c;
+      background: #f6fbff;
+      padding: 10px 12px;
+      border-radius: 3px;
+      margin: 12px 0 18px;
+    }
+
+    .muted-small {
+      color: #777;
+      font-size: 12px;
+    }
+
+    .bs-docs-sidenav>li>a {
+      padding: 8px 12px;
+    }
+
+    @media (max-width: 767px) {
+      .proj-item {
+        padding: 10px;
+      }
+
+      .filters .control-group {
+        display: block;
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="jumbotron subhead" id="overview">
+      <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
+      <h1>Artificial Intelligence Robotics and Control Systems Laboratory (AIRoCS)</h1>
+    </header>
+
+    <div class="masthead">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <ul class="nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="people.html">People</a></li>
+              <li class="active"><a href="#">Research</a></li>
+              <li><a href="publications.html">Publications</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="teaching.html">Teaching</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
 
-      <hr>
+    <hr>
 
-      <div class="row-fluid">
-        <!-- Sticky in-page nav -->
-        <div class="span3 bs-docs-sidebar" id="navparent">
-          <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="200" data-offset-bottom="260">
-            <li><a href="#overview-research">Overview</a></li>
-            <li><a href="#featured">Featured Projects</a></li>
-            <li><a href="#projects">All Projects</a></li>
-            <li><a href="#automatic-control">Automatic Control</a></li>
-            <li><a href="#robot-learning">Robot Learning</a></li>
-            <li><a class="subhead" href="#imitation-learning">Imitation Learning</a></li>
-            <li><a href="#facilities">Facilities</a></li>
-            <li><a href="#openings">Open Positions</a></li>
-          </ul>
+    <div class="row-fluid">
+      <!-- Sticky in-page nav -->
+      <div class="span3 bs-docs-sidebar" id="navparent">
+        <ul class="nav nav-list bs-docs-sidenav" data-spy="affix" data-offset-top="200" data-offset-bottom="260">
+          <li><a href="#overview-research">Overview</a></li>
+          <li><a href="#featured">Featured Projects</a></li>
+          <li><a href="#projects">All Projects</a></li>
+          <li><a href="#automatic-control">Automatic Control</a></li>
+          <li><a href="#robot-learning">Robot Learning</a></li>
+          <li><a class="subhead" href="#imitation-learning">Imitation Learning</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#openings">Open Positions</a></li>
+        </ul>
+      </div>
+
+      <div class="span8 offset1">
+        <!-- Overview -->
+        <section id="overview-research" class="hero-research">
+          <h3 style="margin-top:0;">Research Overview</h3>
+          <p>
+            AIRoCS advances <strong>intelligent robotics and control</strong> with emphasis on
+            <em>safe learning</em>, <em>aerial manipulation</em>, <em>vision-language navigation</em>,
+            <em>SLAM on embedded platforms</em>, and <em>multi-robot swarms</em>. We span theory,
+            algorithms, and deployment on real systems.
+          </p>
+          <div class="focus-badges">
+            <span class="label label-important">Safety</span>
+            <span class="label label-success">Learning-Based Control</span>
+            <span class="label label-info">Aerial Manipulation</span>
+            <span class="label label-warning">Vision-Language</span>
+            <span class="label">SLAM &amp; Perception</span>
+            <span class="label label-inverse">Swarms</span>
+          </div>
+        </section>
+
+        <!-- Filters -->
+        <div class="filters">
+          <form class="form-inline">
+            <div class="control-group">
+              <input id="q" type="text" class="input-xxlarge" placeholder="Search title, PI, tags, abstract…">
+            </div>
+            <div class="control-group">
+              <select id="area" class="input-medium">
+                <option value="all">All areas</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <select id="status" class="input-medium">
+                <option value="all">All status</option>
+                <option>Ongoing</option>
+                <option>Completed</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <select id="year" class="input-small">
+                <option value="all">All years</option>
+              </select>
+            </div>
+            <button id="clear" type="button" class="btn">Clear</button>
+          </form>
         </div>
 
-        <div class="span8 offset1">
-          <!-- Overview -->
-          <section id="overview-research" class="hero-research">
-            <h3 style="margin-top:0;">Research Overview</h3>
-            <p>
-              AIRoCS advances <strong>intelligent robotics and control</strong> with emphasis on
-              <em>safe learning</em>, <em>aerial manipulation</em>, <em>vision-language navigation</em>,
-              <em>SLAM on embedded platforms</em>, and <em>multi-robot swarms</em>. We span theory,
-              algorithms, and deployment on real systems.
-            </p>
-            <div class="focus-badges">
-              <span class="label label-important">Safety</span>
-              <span class="label label-success">Learning-Based Control</span>
-              <span class="label label-info">Aerial Manipulation</span>
-              <span class="label label-warning">Vision-Language</span>
-              <span class="label">SLAM &amp; Perception</span>
-              <span class="label label-inverse">Swarms</span>
-            </div>
-          </section>
-
-          <!-- Filters -->
-          <div class="filters">
-            <form class="form-inline">
-              <div class="control-group">
-                <input id="q" type="text" class="input-xxlarge" placeholder="Search title, PI, tags, abstract…">
-              </div>
-              <div class="control-group">
-                <select id="area" class="input-medium">
-                  <option value="all">All areas</option>
-                </select>
-              </div>
-              <div class="control-group">
-                <select id="status" class="input-medium">
-                  <option value="all">All status</option>
-                  <option>Ongoing</option>
-                  <option>Completed</option>
-                </select>
-              </div>
-              <div class="control-group">
-                <select id="year" class="input-small">
-                  <option value="all">All years</option>
-                </select>
-              </div>
-              <button id="clear" type="button" class="btn">Clear</button>
-            </form>
-          </div>
-
-          <!-- Featured Projects -->
-          <section id="featured">
-            <h3 class="year-heading">Featured Projects</h3>
-            <!-- <div class="row-fluid">
+        <!-- Featured Projects -->
+        <section id="featured">
+          <h3 class="year-heading">Featured Projects</h3>
+          <!-- <div class="row-fluid">
               <div class="span4">
                 <div class="proj-item" data-year="2025" data-area="Aerial Manipulation" data-status="Ongoing">
                   <img class="proj-thumb" src="thumbs/aerial_manipulation.jpg" alt="Quadrotor with robotic arm">
@@ -229,145 +310,148 @@
             </ul>
           </section> -->
 
-          <!-- Thematic Areas -->
-          <section id="automatic-control">
-            <h3 class="year-heading">Automatic Control</h3>
-            <p>
-              Automatic control designs feedback laws that make complex systems behave reliably under uncertainty.
-              We study compositional analysis of large-scale interconnected systems, symbolic control, and
-              <em>control barrier functions (CBFs)</em> to guarantee safety and stability, and integrate these with
-              learning for performance.
-            </p>
-            <ul>
-              <li>Barrier-function shielding for RL controllers.</li>
-              <li>Scalable verification for networked robotic systems.</li>
-              <li>Model predictive control with learned dynamics.</li>
-            </ul>
-          </section>
-
-          <section id="robot-learning">
-            <h3 class="year-heading">Robot Learning</h3>
-            <p>
-              We develop data-efficient methods that combine models and priors with modern learning, enabling robots
-              to adapt on-the-fly while respecting constraints.
-            </p>
-
-            <section id="imitation-learning">
-              <h4>Imitation Learning</h4>
+            <!-- Thematic Areas -->
+            <section id="automatic-control">
+              <h3 class="year-heading">Automatic Control</h3>
               <p>
-                Imitation learning accelerates skill acquisition by leveraging expert demonstrations. We study
-                dataset aggregation, risk-sensitive clones, and policy refinement with online safety filters to
-                bridge the sim-to-real gap in manipulation and navigation.
+                Automatic control designs feedback laws that make complex systems behave reliably under uncertainty.
+                We study compositional analysis of large-scale interconnected systems, symbolic control, and
+                <em>control barrier functions (CBFs)</em> to guarantee safety and stability, and integrate these with
+                learning for performance.
               </p>
+              <ul>
+                <li>Barrier-function shielding for RL controllers.</li>
+                <li>Scalable verification for networked robotic systems.</li>
+                <li>Model predictive control with learned dynamics.</li>
+              </ul>
             </section>
-          </section>
 
-          <!-- Facilities -->
-          <section id="facilities">
-            <h3 class="year-heading">Facilities & Platforms</h3>
-            <div class="row-fluid">
-              <div class="span4">
-                <h4>Flying Arena</h4>
-                <p>10×10×6 m netted space with motion capture, wind array, and modular obstacles.</p>
-              </div>
-              <div class="span4">
-                <h4>Mobile Robotics Bay</h4>
-                <p>Indoor/outdoor loops, ROS 2 testbed, and embedded profiling racks.</p>
-              </div>
-              <div class="span4">
-                <h4>Compute & Simulation</h4>
-                <p>GPU servers for RL/SLAM; photorealistic simulation with hardware-in-the-loop.</p>
-              </div>
-            </div>
-          </section>
+            <section id="robot-learning">
+              <h3 class="year-heading">Robot Learning</h3>
+              <p>
+                We develop data-efficient methods that combine models and priors with modern learning, enabling robots
+                to adapt on-the-fly while respecting constraints.
+              </p>
 
-          <!-- Openings -->
-          <section id="openings">
-            <h3 class="year-heading">Open Positions</h3>
-            <div class="callout">
-              We welcome <strong>PhD students</strong>, <strong>postdocs</strong>, and <strong>visiting interns</strong>
-              passionate about intelligent robots. Email your CV and short statement of fit to
-              <a href="mailto:Abdalla.Swikir@mbzuai.ac.ae">Abdalla.Swikir@mbzuai.ac.ae</a> (subject: <em>AIRoCS Application</em>).
-            </div>
-          </section>
+              <section id="imitation-learning">
+                <h4>Imitation Learning</h4>
+                <p>
+                  Imitation learning accelerates skill acquisition by leveraging expert demonstrations. We study
+                  dataset aggregation, risk-sensitive clones, and policy refinement with online safety filters to
+                  bridge the sim-to-real gap in manipulation and navigation.
+                </p>
+              </section>
+            </section>
 
-          <p><a href="#top">Back to top ↑</a></p>
-        </div>
+            <!-- Facilities -->
+            <section id="facilities">
+              <h3 class="year-heading">Facilities & Platforms</h3>
+              <div class="row-fluid">
+                <div class="span4">
+                  <h4>Flying Arena</h4>
+                  <p>10×10×6 m netted space with motion capture, wind array, and modular obstacles.</p>
+                </div>
+                <div class="span4">
+                  <h4>Mobile Robotics Bay</h4>
+                  <p>Indoor/outdoor loops, ROS 2 testbed, and embedded profiling racks.</p>
+                </div>
+                <div class="span4">
+                  <h4>Compute & Simulation</h4>
+                  <p>GPU servers for RL/SLAM; photorealistic simulation with hardware-in-the-loop.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Openings -->
+            <section id="openings">
+              <h3 class="year-heading">Open Positions</h3>
+              <div class="callout">
+                We welcome <strong>PhD students</strong>, <strong>postdocs</strong>, and <strong>visiting
+                  interns</strong>
+                passionate about intelligent robots. Email your CV and short statement of fit to
+                <a href="mailto:Abdalla.Swikir@mbzuai.ac.ae">Abdalla.Swikir@mbzuai.ac.ae</a> (subject: <em>AIRoCS
+                  Application</em>).
+              </div>
+            </section>
+
+            <p><a href="#top">Back to top ↑</a></p>
       </div>
-
-      <hr>
     </div>
 
-    <footer id="footer">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span5">
-            <h3>Contact Information</h3>
-            <p><b>Office Hours: </b>Monday–Friday (9.00am–5.00pm)</p>
-            <a href="mailto:abdallarobotlab@gmail.com">Email</a>
-          </div>
-          <div class="span2">
-            <a href="https://abdallaswikirrobotlab.github.io/Robot_Lab_Website/">
-              <img src="thumbs/AIRoCS_logo.jpg" alt="AIRoCS lab logo"/>
-            </a>
-          </div>
-          <div class="span5">
-            <h3>Address</h3>
-            <p>AIRoCS Laboratory<br>Masdar City – SE45 05<br>Abu Dhabi, UAE</p>
-            <a href="https://maps.app.goo.gl/gb7csNPpujr68AkG7">Show Map</a>
-          </div>
+    <hr>
+  </div>
+
+  <footer id="footer">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span5">
+          <h3>Contact Information</h3>
+          <p><b>Office Hours: </b>Monday–Friday (9.00am–5.00pm)</p>
+          <a href="mailto:abdallarobotlab@gmail.com">Email</a>
+        </div>
+        <div class="span2">
+          <a href="https://abdallaswikirrobotlab.github.io/Robot_Lab_Website/">
+            <img src="thumbs/AIRoCS_logo.jpg" alt="AIRoCS lab logo" />
+          </a>
+        </div>
+        <div class="span5">
+          <h3>Address</h3>
+          <p>AIRoCS Laboratory<br>Masdar City – SE45 05<br>Abu Dhabi, UAE</p>
+          <a href="https://maps.app.goo.gl/gb7csNPpujr68AkG7">Show Map</a>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- JS at end for performance -->
-    <script src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-      // Scrollspy for sidebar
-      $(document).ready(function() { $(document.body).scrollspy({ target: "#navparent" }); });
+  <!-- JS at end for performance -->
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    // Scrollspy for sidebar
+    $(document).ready(function () { $(document.body).scrollspy({ target: "#navparent" }); });
 
-      // Build Area & Year selects from project attributes, add search/filter
-      (function(){
-        function norm(s){ return (s||"").toString().toLowerCase(); }
+    // Build Area & Year selects from project attributes, add search/filter
+    (function () {
+      function norm(s) { return (s || "").toString().toLowerCase(); }
 
-        function populateFilters(){
-          var areas={}, years={};
-          $('.proj-item').each(function(){
-            areas[$(this).data('area')] = true;
-            years[$(this).data('year')] = true;
-          });
-          var areaList = Object.keys(areas).sort();
-          var yearList = Object.keys(years).sort(function(a,b){ return b-a; });
-          var $area = $('#area'), $year = $('#year');
-          areaList.forEach(function(a){ if (a && a!=='undefined') $area.append('<option>'+a+'</option>'); });
-          yearList.forEach(function(y){ if (y && y!=='undefined') $year.append('<option>'+y+'</option>'); });
-        }
-
-        function applyFilters(){
-          var q = norm($('#q').val());
-          var area = $('#area').val();
-          var status = $('#status').val();
-          var year = $('#year').val();
-
-          $('.proj-item').each(function(){
-            var $it = $(this);
-            var matchesQ = !q || norm($it.text()).indexOf(q) !== -1;
-            var matchesArea = (area==='all') || ($it.data('area') == area);
-            var matchesStatus = (status==='all') || ($it.data('status') == status);
-            var matchesYear = (year==='all') || ($it.data('year').toString() === year);
-            $it.toggle(matchesQ && matchesArea && matchesStatus && matchesYear);
-          });
-        }
-
-        $('#q').on('keyup', applyFilters);
-        $('#area, #status, #year').on('change', applyFilters);
-        $('#clear').on('click', function(){
-          $('#q').val(''); $('#area').val('all'); $('#status').val('all'); $('#year').val('all'); applyFilters();
+      function populateFilters() {
+        var areas = {}, years = {};
+        $('.proj-item').each(function () {
+          areas[$(this).data('area')] = true;
+          years[$(this).data('year')] = true;
         });
+        var areaList = Object.keys(areas).sort();
+        var yearList = Object.keys(years).sort(function (a, b) { return b - a; });
+        var $area = $('#area'), $year = $('#year');
+        areaList.forEach(function (a) { if (a && a !== 'undefined') $area.append('<option>' + a + '</option>'); });
+        yearList.forEach(function (y) { if (y && y !== 'undefined') $year.append('<option>' + y + '</option>'); });
+      }
 
-        populateFilters(); applyFilters();
-      })();
-    </script>
-  </body>
+      function applyFilters() {
+        var q = norm($('#q').val());
+        var area = $('#area').val();
+        var status = $('#status').val();
+        var year = $('#year').val();
+
+        $('.proj-item').each(function () {
+          var $it = $(this);
+          var matchesQ = !q || norm($it.text()).indexOf(q) !== -1;
+          var matchesArea = (area === 'all') || ($it.data('area') == area);
+          var matchesStatus = (status === 'all') || ($it.data('status') == status);
+          var matchesYear = (year === 'all') || ($it.data('year').toString() === year);
+          $it.toggle(matchesQ && matchesArea && matchesStatus && matchesYear);
+        });
+      }
+
+      $('#q').on('keyup', applyFilters);
+      $('#area, #status, #year').on('change', applyFilters);
+      $('#clear').on('click', function () {
+        $('#q').val(''); $('#area').val('all'); $('#status').val('all'); $('#year').val('all'); applyFilters();
+      });
+
+      populateFilters(); applyFilters();
+    })();
+  </script>
+</body>
+
 </html>
