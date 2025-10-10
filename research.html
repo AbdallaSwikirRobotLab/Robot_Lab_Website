@@ -150,9 +150,6 @@
           <li><a href="#overview-research">Overview</a></li>
           <!-- <li><a href="#featured">Featured Projects</a></li> -->
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#automatic-control">Automatic Control</a></li>
-          <li><a href="#robot-learning">Robot Learning</a></li>
-          <li><a class="subhead" href="#imitation-learning">Imitation Learning</a></li>
           <li><a href="#facilities">Facilities</a></li>
           <li><a href="#openings">Open Positions</a></li>
         </ul>
@@ -222,158 +219,115 @@
                   </div>
                   <p class="muted-small"><a href="publications.html">Related papers</a> · <a href="gallery.html">Video</a></p>
                 </div>
-              </div>
-              <div class="span4">
-                <div class="proj-item" data-year="2025" data-area="Vision-Language" data-status="Ongoing">
-                  <img class="proj-thumb" src="thumbs/vln_dynamic.jpg" alt="Agent following language instructions in a crowd">
-                  <div class="proj-title">Vision-Language Navigation in Dynamic Environments</div>
-                  <div class="proj-meta">PI: D. Student · 2025 · Ongoing</div>
-                  <p>Embodied agents that follow natural-language instructions amid moving obstacles using predictive control.</p>
-                  <div class="proj-tags">
-                    <span class="label label-warning">Vision-Language</span>
-                    <span class="label">Navigation</span>
-                    <span class="label">Embodied AI</span>
-                  </div>
-                  <p class="muted-small"><a href="publications.html">ICRA’25</a> · <a href="gallery.html">Demo</a></p>
-                </div>
-              </div>
-              <div class="span4">
-                <div class="proj-item" data-year="2025" data-area="Swarms" data-status="Ongoing">
-                  <img class="proj-thumb" src="thumbs/swarm_rl.jpg" alt="Multi-rotor swarm outdoors">
-                  <div class="proj-title">Robust Policy Learning for Multi-Rotor Swarms</div>
-                  <div class="proj-meta">PI: H. LabMember · 2025 · Ongoing (preprint)</div>
-                  <p>Scalable multi-agent RL with distributional robustness for formation, avoidance, and gust disturbances.</p>
-                  <div class="proj-tags">
-                    <span class="label label-inverse">Swarms</span>
-                    <span class="label label-important">Robustness</span>
-                    <span class="label">RL</span>
-                  </div>
-                  <p class="muted-small"><a href="publications.html">arXiv’25</a> · <a href="gallery.html">Simulation</a></p>
-                </div>
-              </div>
+              </div> -->
+          <div class="proj-item" data-year="2025" data-area="Safety" data-status="Ongoing">
+            <div class="proj-title">Certified Learning & Control for Safety-Critical Robotics</div>
+            <div class="proj-meta">PI: Lab Team · 2025 · Ongoing</div>
+            <p>Develop methods that combine formal verification, control barrier functions, and learning algorithms to
+              ensure safety certificates for robots (dual-arm manipulators, swarm, soft robots).
+              This direction pushes toward trustworthy autonomy by embedding guarantees directly into learning-based
+              controllers.</p>
+            <div class="proj-tags">
+              <span class="label label-inverse">Safety</span>
+              <span class="label label-important">Verification</span>
+              <span class="label">CBFs</span>
+              <span class="label">Learning</span>
             </div>
-          </section> -->
+          </div>
 
-          <!-- All Projects -->
-          <!-- <section id="projects">
-            <h3 class="year-heading">All Projects</h3> -->
-            <!-- <ul id="projList" class="proj-list">
-              <li class="proj-item" data-year="2025" data-area="Safety & RL" data-status="Ongoing">
-                <div class="row-fluid">
-                  <div class="span3"><img class="proj-thumb" src="thumbs/safe_rl_quad.jpg" alt="Quadrotor near structure"></div>
-                  <div class="span9">
-                    <div class="proj-title">Safe Reinforcement Learning for Quadrotors</div>
-                    <div class="proj-meta">Leads: J. Smith, K. Researcher · 2025 · Ongoing</div>
-                    <p>Constraint-satisfying RL with reachability shields and online ID for agile flight close to structures.</p>
-                    <div class="proj-tags">
-                      <span class="label label-important">Safety</span>
-                      <span class="label">RL</span>
-                      <span class="label">Quadrotors</span>
-                    </div>
-                    <p class="muted-small"><a href="publications.html">IJRR’24 → extended</a> · <a href="gallery.html">Datasets</a></p>
-                  </div>
-                </div>
-              </li>
+          <div class="proj-item" data-year="2025" data-area="Swarms" data-status="Ongoing">
+            <div class="proj-title">Collective & Swarm Intelligence for Distributed Robotics</div>
+            <div class="proj-meta">PI: Lab Team · 2025 · Ongoing</div>
+            <p>Explore swarm coordination and collective learning across heterogeneous robot fleets. Applications
+              include precision agriculture, multi-arm manipulation, and remote testbeds (e.g., space repair).
+              The emphasis is on compositional analysis, communication-constrained knowledge transfer, and scalability
+              of distributed intelligence.</p>
+            <div class="proj-tags">
+              <span class="label label-inverse">Swarms</span>
+              <span class="label label-important">Distributed</span>
+              <span class="label">Collective Learning</span>
+              <span class="label">Scalability</span>
+            </div>
+          </div>
 
-              <li class="proj-item" data-year="2024" data-area="SLAM & Perception" data-status="Completed">
-                <div class="row-fluid">
-                  <div class="span3"><img class="proj-thumb" src="thumbs/embedded_slam.jpg" alt="Embedded SLAM board"></div>
-                  <div class="span9">
-                    <div class="proj-title">Real-Time SLAM on Resource-Constrained Platforms</div>
-                    <div class="proj-meta">Leads: M. Dev, N. Graduate · 2024 · Completed</div>
-                    <p>Frugal perception (int8, event-based front-ends, learned keypoints) for micro-UAVs and ground robots.</p>
-                    <div class="proj-tags">
-                      <span class="label">SLAM</span>
-                      <span class="label">Embedded</span>
-                      <span class="label">Real-Time</span>
-                    </div>
-                    <p class="muted-small"><a href="publications.html">IROS’24</a> · <a href="gallery.html">Video</a></p>
-                  </div>
-                </div>
-              </li>
+          <div class="proj-item" data-year="2025" data-area="Perception" data-status="Ongoing">
+            <div class="proj-title">Visuo-Tactile & Force-Vision Fusion for Perception-Action</div>
+            <div class="proj-meta">PI: Lab Team · 2025 · Ongoing</div>
+            <p>Investigate how tactile sensing, force feedback, and vision can be fused for robust perception in
+              manipulation tasks.
+              This research direction aims to achieve data-efficient skill acquisition, adaptive reflexes, and
+              high-precision motor control, especially in unstructured or human-centered environments.</p>
+            <div class="proj-tags">
+              <span class="label label-inverse">Perception</span>
+              <span class="label label-important">Tactile</span>
+              <span class="label">Force</span>
+              <span class="label">Vision</span>
+            </div>
+          </div>
 
-              <li class="proj-item" data-year="2023" data-area="Field Robotics" data-status="Completed">
-                <div class="row-fluid">
-                  <div class="span3"><img class="proj-thumb" src="thumbs/field_robotics.jpg" alt="Field robot in extreme environment"></div>
-                  <div class="span9">
-                    <div class="proj-title">Robotics for Extreme Environments</div>
-                    <div class="proj-meta">Leads: P. Author, Q. Fellow · 2023 · Completed</div>
-                    <p>Survey & trials for autonomous inspection in desert heat and corrosive offshore conditions.</p>
-                    <div class="proj-tags">
-                      <span class="label">Field Robotics</span>
-                      <span class="label">Resilience</span>
-                    </div>
-                    <p class="muted-small"><a href="publications.html">Workshop’23</a> · <a href="gallery.html">Report</a></p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </section> -->
+          <div class="proj-item" data-year="2025" data-area="Representations" data-status="Ongoing">
+            <div class="proj-title">Geometry- & Physics-Informed Representations for Robot Learning</div>
+            <div class="proj-meta">PI: Lab Team · 2025 · Ongoing</div>
+            <p>Use advanced mathematical tools—Grassmannian geometry, tensor-train decompositions, and physics-informed
+              neural fields—to develop compact, generalizable skill representations.
+              This allows robots to extrapolate beyond training data, handle singularities, and adapt across different
+              embodiments while maintaining efficiency.</p>
+            <div class="proj-tags">
+              <span class="label label-inverse">Representations</span>
+              <span class="label label-important">Geometry</span>
+              <span class="label">Tensor-Train</span>
+              <span class="label">Neural Fields</span>
+            </div>
+          </div>
 
-            <!-- Thematic Areas -->
-            <section id="automatic-control">
-              <h3 class="year-heading">Automatic Control</h3>
-              <p>
-                Automatic control designs feedback laws that make complex systems behave reliably under uncertainty.
-                We study compositional analysis of large-scale interconnected systems, symbolic control, and
-                <em>control barrier functions (CBFs)</em> to guarantee safety and stability, and integrate these with
-                learning for performance.
-              </p>
-              <ul>
-                <li>Barrier-function shielding for RL controllers.</li>
-                <li>Scalable verification for networked robotic systems.</li>
-                <li>Model predictive control with learned dynamics.</li>
-              </ul>
-            </section>
+          <div class="proj-item" data-year="2025" data-area="HRI/Telepresence" data-status="Ongoing">
+            <div class="proj-title">Next-Gen Human-Robot Interaction & Telepresence</div>
+            <div class="proj-meta">PI: Lab Team · 2025 · Ongoing</div>
+            <p>Design humanoid-like robotic avatars and immersive testbeds (e.g., 6G-enabled surgical robots,
+              telepresence systems) that blend quantum control, mechatronics, and safe learning.
+              The focus lies in achieving naturalistic interaction, remote embodiment, and reliable shared autonomy
+              between human operators and robotic systems.</p>
+            <div class="proj-tags">
+              <span class="label label-inverse">HRI</span>
+              <span class="label label-important">Telepresence</span>
+              <span class="label">6G</span>
+              <span class="label">Shared Autonomy</span>
+            </div>
+          </div>
 
-            <section id="robot-learning">
-              <h3 class="year-heading">Robot Learning</h3>
-              <p>
-                We develop data-efficient methods that combine models and priors with modern learning, enabling robots
-                to adapt on-the-fly while respecting constraints.
-              </p>
+        </section>
 
-              <section id="imitation-learning">
-                <h4>Imitation Learning</h4>
-                <p>
-                  Imitation learning accelerates skill acquisition by leveraging expert demonstrations. We study
-                  dataset aggregation, risk-sensitive clones, and policy refinement with online safety filters to
-                  bridge the sim-to-real gap in manipulation and navigation.
-                </p>
-              </section>
-            </section>
+        <!-- Facilities -->
+        <section id="facilities">
+          <h3 class="year-heading">Facilities & Platforms</h3>
+          <div class="row-fluid">
+            <div class="span4">
+              <h4>Flying Arena</h4>
+              <p>10×10×6 m netted space with motion capture, wind array, and modular obstacles.</p>
+            </div>
+            <div class="span4">
+              <h4>Mobile Robotics Bay</h4>
+              <p>Indoor/outdoor loops, ROS 2 testbed, and embedded profiling racks.</p>
+            </div>
+            <div class="span4">
+              <h4>Compute & Simulation</h4>
+              <p>GPU servers for RL/SLAM; photorealistic simulation with hardware-in-the-loop.</p>
+            </div>
+          </div>
+        </section>
 
-            <!-- Facilities -->
-            <section id="facilities">
-              <h3 class="year-heading">Facilities & Platforms</h3>
-              <div class="row-fluid">
-                <div class="span4">
-                  <h4>Flying Arena</h4>
-                  <p>10×10×6 m netted space with motion capture, wind array, and modular obstacles.</p>
-                </div>
-                <div class="span4">
-                  <h4>Mobile Robotics Bay</h4>
-                  <p>Indoor/outdoor loops, ROS 2 testbed, and embedded profiling racks.</p>
-                </div>
-                <div class="span4">
-                  <h4>Compute & Simulation</h4>
-                  <p>GPU servers for RL/SLAM; photorealistic simulation with hardware-in-the-loop.</p>
-                </div>
-              </div>
-            </section>
+        <!-- Openings -->
+        <section id="openings">
+          <h3 class="year-heading">Open Positions</h3>
+          <div class="callout">
+            We welcome <strong>PhD students</strong>, <strong>postdocs</strong>, and <strong>visiting
+              interns</strong>
+            passionate about intelligent robots. Fill the
+            <a href="https://forms.gle/LVCdofX83ikJN9mw8">google form</a>.
+          </div>
+        </section>
 
-            <!-- Openings -->
-            <section id="openings">
-              <h3 class="year-heading">Open Positions</h3>
-              <div class="callout">
-                We welcome <strong>PhD students</strong>, <strong>postdocs</strong>, and <strong>visiting
-                  interns</strong>
-                passionate about intelligent robots. Fill the 
-                <a href="https://forms.gle/LVCdofX83ikJN9mw8">google form</a>.
-              </div>
-            </section>
-
-            <p><a href="#top">Back to top ↑</a></p>
+        <p><a href="#top">Back to top ↑</a></p>
       </div>
     </div>
 
@@ -386,7 +340,7 @@
         <div class="span5">
           <h3>Contact Information</h3>
           <p><b>Visitors Hours: </b>Monday–Friday (9.00am–5.00pm)</p>
-                    <a href="https://forms.gle/qxykhqFnT3sWA5ks5">Visitors Form</a>
+          <a href="https://forms.gle/qxykhqFnT3sWA5ks5">Visitors Form</a>
 
         </div>
         <div class="span2">
