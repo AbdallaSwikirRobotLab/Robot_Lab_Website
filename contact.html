@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/Organization">
+
 <head>
   <meta charset="utf-8">
   <title>Contact | AIRoCS Lab</title>
@@ -15,51 +16,160 @@
 
   <style>
     /* -------- General tidy-ups -------- */
-    .subhead h1 { font-size: 1.6rem; line-height: 1.2; margin: .4em 0; }
-    .content h4 { margin-top: 0; }
+    .subhead h1 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin: .4em 0;
+    }
+
+    .content h4 {
+      margin-top: 0;
+    }
 
     .contact-card {
-      border: 1px solid #eee; background: #fff;
-      border-radius: 4px; padding: 12px; margin-bottom: 12px;
+      border: 1px solid #eee;
+      background: #fff;
+      border-radius: 4px;
+      padding: 12px;
+      margin-bottom: 12px;
     }
-    .muted-small { color: #777; font-size: 12px; }
-    .btn-blockish { display: block; margin-bottom: 8px; }
+
+    .muted-small {
+      color: #777;
+      font-size: 12px;
+    }
+
+    .btn-blockish {
+      display: block;
+      margin-bottom: 8px;
+    }
 
     /* Responsive map */
-    .map-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; }
-    .map-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .map-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 4px;
+    }
 
-    .callout { border-left: 4px solid #08c; background: #f6fbff; padding: 10px 12px; border-radius: 3px; margin-bottom: 14px; }
-    #footer img { max-width: 100%; height: auto; }
+    .map-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .callout {
+      border-left: 4px solid #08c;
+      background: #f6fbff;
+      padding: 10px 12px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+
+    #footer img {
+      max-width: 100%;
+      height: auto;
+    }
 
     /* -------- Navbar: make it collapse nicely on phones -------- */
     /* Bootstrap 2 uses .btn-navbar + .nav-collapse */
-    .navbar .btn-navbar { display: none; } /* visible only on small screens below */
+    .navbar .btn-navbar {
+      display: none;
+    }
+
+    /* visible only on small screens below */
 
     /* Show hamburger + collapse vertically on small screens */
     @media (max-width: 979px) {
-      .navbar .btn-navbar { display: block; }
-      .navbar .nav { float: none; margin: 0; }
-      .nav-collapse { clear: both; }
-      .nav-collapse.collapse { height: 0; overflow: hidden; }
-      .nav-collapse.in { height: auto; overflow: visible; }
-      .navbar .nav > li { float: none; }
-      .navbar .nav > li > a { padding: 10px 15px; }
+      .navbar .btn-navbar {
+        display: block;
+      }
+
+      .navbar .nav {
+        float: none;
+        margin: 0;
+      }
+
+      .nav-collapse {
+        clear: both;
+      }
+
+      .nav-collapse.collapse {
+        height: 0;
+        overflow: hidden;
+      }
+
+      .nav-collapse.in {
+        height: auto;
+        overflow: visible;
+      }
+
+      .navbar .nav>li {
+        float: none;
+      }
+
+      .navbar .nav>li>a {
+        padding: 10px 15px;
+      }
     }
 
-    /* Improve readability on phones and ensure columns stack */
-    @media (max-width: 767px) {
-      body { font-size: 16px; line-height: 1.45; }
-      .row-fluid [class*="span"] { float: none; width: 100%; margin-left: 0; }
-      .contact-card { padding: 14px; margin-bottom: 14px; }
-      .subhead h1 { font-size: 1.2rem; }
-      .lead { font-size: 0.95rem; }
+    @media (max-width: 979px) {
+      .navbar .btn-navbar {
+        display: block;
+      }
+
+      .nav-collapse {
+        clear: both;
+        width: 100%;
+      }
+
+      .nav-collapse.collapse {
+        height: 0;
+        overflow: hidden;
+      }
+
+      .nav-collapse.in {
+        height: auto;
+        overflow: visible;
+      }
+
+      .navbar .nav {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      .navbar .nav>li {
+        float: none;
+        display: block;
+      }
+
+      .navbar .nav>li>a {
+        display: block;
+        white-space: normal;
+        /* allow wrapping */
+        overflow-wrap: anywhere;
+        /* break long words if needed */
+        word-wrap: break-word;
+        /* legacy fallback */
+        line-height: 22px;
+        /* prevent line collisions */
+        padding: 10px 14px;
+        /* finger-friendly */
+        border-top: 1px solid #eee;
+      }
     }
 
-    /* In case collapse JS isn't loaded, allow horizontal scroll as a last resort */
+    /* Optional fallback: if collapse JS fails, keep menu visible on small phones */
     @media (max-width: 767px) {
-      .navbar .nav { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
-      .navbar .nav > li { display: inline-block; }
+      .nav-collapse.collapse {
+        height: auto !important;
+        overflow: visible !important;
+      }
     }
   </style>
 </head>
@@ -76,8 +186,9 @@
       <div class="navbar">
         <div class="navbar-inner">
           <div class="container">
-            <!-- Mobile toggle -->
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
+            <!-- Mobile toggle (hamburger) -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="Toggle navigation"
+              aria-controls="main-nav" aria-expanded="false">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -157,7 +268,8 @@
 
         <div class="contact-card">
           <h4>Links</h4>
-          <p><a href="http://scholar.google.com">Google Scholar</a> · <a href="http://www.researchgate.net">ResearchGate</a></p>
+          <p><a href="http://scholar.google.com">Google Scholar</a> · <a
+              href="http://www.researchgate.net">ResearchGate</a></p>
           <p>
             <a href="https://www.facebook.com" class="sb facebook" aria-label="Facebook">Facebook</a>
             <a href="http://www.linkedin.com" class="sb linkedin" aria-label="LinkedIn">LinkedIn</a>
@@ -207,7 +319,7 @@
         ta.value = text;
         document.body.appendChild(ta);
         ta.select();
-        try { document.execCommand('copy'); } catch (e) {}
+        try { document.execCommand('copy'); } catch (e) { }
         document.body.removeChild(ta);
         var prev = $el.text();
         $el.text('copied').addClass('copy-ok');
@@ -225,7 +337,7 @@
     // If Bootstrap's collapse plugin is present, it will handle the toggle.
     // If not, this tiny fallback keeps the hamburger working.
     (function () {
-      function ready(fn) { /in/.test(document.readyState) ? setTimeout(function(){ ready(fn); }, 9) : fn(); }
+      function ready(fn) { /in/.test(document.readyState) ? setTimeout(function () { ready(fn); }, 9) : fn(); }
       ready(function () {
         var btn = document.querySelector('.btn-navbar');
         if (!btn) return;
@@ -257,5 +369,35 @@
       });
     })();
   </script>
+  <script>
+    (function () {
+      function ready(fn) { /in/.test(document.readyState) ? setTimeout(function () { ready(fn); }, 9) : fn(); }
+      ready(function () {
+        var btn = document.querySelector('.btn-navbar');
+        if (!btn) return;
+        var target = document.querySelector(btn.getAttribute('data-target'));
+        if (!target) return;
+
+        btn.addEventListener('click', function () {
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', !expanded);
+
+          // Only run if Bootstrap's collapse isn't present
+          if (!(window.jQuery && jQuery.fn && jQuery.fn.collapse)) {
+            if (target.className.indexOf('in') === -1) {
+              target.className += ' in';
+              target.style.height = 'auto';
+              target.style.overflow = 'visible';
+            } else {
+              target.className = target.className.replace(/\bin\b/, '').trim();
+              target.style.height = '0';
+              target.style.overflow = 'hidden';
+            }
+          }
+        });
+      });
+    })();
+  </script>
 </body>
+
 </html>
