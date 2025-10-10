@@ -1,90 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/Organization">
-
 <head>
   <meta charset="utf-8">
   <title>Contact | AIRoCS Lab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact AIRoCS Lab at MBZUAI – address, map, email, phone, and visiting info.">
   <meta name="author" content="AIRoCS Lab">
+
+  <!-- Your existing CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
   <link href="css/theme.css" rel="stylesheet">
   <link href="css/social-buttons.css" rel="stylesheet">
-  <style>
-    /* Lightweight, Bootstrap-2 friendly tweaks */
-    .subhead h1 {
-      font-size: 1.6rem;
-      line-height: 1.2;
-      margin: .4em 0;
-    }
 
-    .content h4 {
-      margin-top: 0;
-    }
+  <style>
+    /* -------- General tidy-ups -------- */
+    .subhead h1 { font-size: 1.6rem; line-height: 1.2; margin: .4em 0; }
+    .content h4 { margin-top: 0; }
 
     .contact-card {
-      border: 1px solid #eee;
-      background: #fff;
-      border-radius: 4px;
-      padding: 12px;
-      margin-bottom: 12px;
+      border: 1px solid #eee; background: #fff;
+      border-radius: 4px; padding: 12px; margin-bottom: 12px;
+    }
+    .muted-small { color: #777; font-size: 12px; }
+    .btn-blockish { display: block; margin-bottom: 8px; }
+
+    /* Responsive map */
+    .map-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; }
+    .map-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+    .callout { border-left: 4px solid #08c; background: #f6fbff; padding: 10px 12px; border-radius: 3px; margin-bottom: 14px; }
+    #footer img { max-width: 100%; height: auto; }
+
+    /* -------- Navbar: make it collapse nicely on phones -------- */
+    /* Bootstrap 2 uses .btn-navbar + .nav-collapse */
+    .navbar .btn-navbar { display: none; } /* visible only on small screens below */
+
+    /* Show hamburger + collapse vertically on small screens */
+    @media (max-width: 979px) {
+      .navbar .btn-navbar { display: block; }
+      .navbar .nav { float: none; margin: 0; }
+      .nav-collapse { clear: both; }
+      .nav-collapse.collapse { height: 0; overflow: hidden; }
+      .nav-collapse.in { height: auto; overflow: visible; }
+      .navbar .nav > li { float: none; }
+      .navbar .nav > li > a { padding: 10px 15px; }
     }
 
-    .contact-card .label {
-      margin-right: 6px;
+    /* Improve readability on phones and ensure columns stack */
+    @media (max-width: 767px) {
+      body { font-size: 16px; line-height: 1.45; }
+      .row-fluid [class*="span"] { float: none; width: 100%; margin-left: 0; }
+      .contact-card { padding: 14px; margin-bottom: 14px; }
+      .subhead h1 { font-size: 1.2rem; }
+      .lead { font-size: 0.95rem; }
     }
 
-    .muted-small {
-      color: #777;
-      font-size: 12px;
-    }
-
-    .btn-blockish {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    /* Responsive map embed */
-    .map-wrap {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 4px;
-    }
-
-    .map-wrap iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* Copy feedback */
-    .copy-badge {
-      cursor: pointer;
-      font-size: 11px;
-      margin-left: 6px;
-    }
-
-    .copy-ok {
-      color: #3a87ad;
-    }
-
-    .callout {
-      border-left: 4px solid #08c;
-      background: #f6fbff;
-      padding: 10px 12px;
-      border-radius: 3px;
-      margin-bottom: 14px;
-    }
-
-    #footer img {
-      max-width: 100%;
-      height: auto;
+    /* In case collapse JS isn't loaded, allow horizontal scroll as a last resort */
+    @media (max-width: 767px) {
+      .navbar .nav { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+      .navbar .nav > li { display: inline-block; }
     }
   </style>
 </head>
@@ -96,20 +71,31 @@
       <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
     </header>
 
+    <!-- ===== Fixed navbar with hamburger on phones ===== -->
     <div class="masthead">
       <div class="navbar">
         <div class="navbar-inner">
           <div class="container">
-            <ul class="nav">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="people.html">People</a></li>
-              <li><a href="research.html">Research</a></li>
-              <li><a href="publications.html">Publications</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="news.html">News</a></li>
-              <li><a href="teaching.html">Teaching</a></li>
-              <li class="active"><a href="#">Contact</a></li>
-            </ul>
+            <!-- Mobile toggle -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+
+            <!-- Collapsible nav -->
+            <div id="main-nav" class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li class="active"><a href="#">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
           </div>
         </div>
       </div>
@@ -119,13 +105,7 @@
 
     <div class="row-fluid">
       <div class="span8 content">
-        <!-- <div class="callout"> -->
-        <!-- For general inquiries, collaborations, or visits, email
-            <a href="mailto:Abdalla.Swikir@mbzuai.ac.ae" itemprop="email">Abdalla.Swikir@mbzuai.ac.ae</a>
-            or the lab at <a href="mailto:abdallarobotlab@gmail.com">abdallarobotlab@gmail.com</a>. -->
-        <!-- </div> -->
-
-        <!-- Responsive Google Map -->
+        <!-- Map -->
         <div class="map-wrap" aria-label="Map to AIRoCS Lab at MBZUAI">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1887.2392666752237!2d54.61821030482016!3d24.432108541783606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e48af75e21805%3A0x649441d6f389bc86!2sMohamed%20bin%20Zayed%20University%20of%20Artificial%20Intelligence!5e0!3m2!1sen!2sae!4v1742840189313!5m2!1sen!2sae"
@@ -140,10 +120,12 @@
         <h3>Visiting Information</h3>
         <div class="contact-card">
           <ul>
-            <li><b>Location:</b> <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <li><b>Location:</b>
+              <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                 <span itemprop="streetAddress">Masdar City – SE45 05, Building 1B, 1st Floor</span>,
                 <span itemprop="addressLocality">Abu Dhabi</span>, <span itemprop="addressCountry">UAE</span>
-              </span></li>
+              </span>
+            </li>
             <li><b>Campus access:</b> Please bring a government ID. Check in with security at Building 1B.</li>
             <li><b>Parking:</b> Visitor parking available at Masdar City lots; follow campus signage.</li>
             <li><b>Delivery/Shipments:</b> Address to “AIRoCS Lab, MBZUAI – Masdar City, Building 1B, 1F”.</li>
@@ -152,7 +134,6 @@
       </div>
 
       <div class="span4">
-        <!-- Address / Hours -->
         <div class="contact-card">
           <h4>Address</h4>
           <p>
@@ -164,40 +145,19 @@
           <p class="muted-small">Hours: Mon–Fri, 9:00–17:00 (UTC+4)</p>
         </div>
 
-        <!-- Contact methods -->
         <div class="contact-card">
           <h4>Contact</h4>
-          <!-- <p>
-            <span class="label">Email</span>
-            <a href="mailto:Abdalla.Swikir@mbzuai.ac.ae" id="email-pi">Abdalla.Swikir@mbzuai.ac.ae</a>
-            <a href="#" class="copy-badge" data-copy="Abdalla.Swikir@mbzuai.ac.ae" title="Copy email"></a>
-          </p>
-          <p class="muted-small" style="margin-top:-6px;">
-            <span class="label">Email</span> <a href="mailto:abdallarobotlab@gmail.com"
-              id="email-lab">abdallarobotlab@gmail.com</a>
-            <a href="#" class="copy-badge" data-copy="abdallarobotlab@gmail.com" title="Copy email"></a>
-          </p>
-          <p>
-            <span class="label label-info">Phone</span>
-            <a href="tel:+97128113243" id="phone-main">+971 2 811 3243</a>
-            <a href="#" class="copy-badge" data-copy="+97128113243" title="Copy phone"></a>
-          </p> -->
           <div class="row-fluid" style="margin-top:8px;">
             <div class="span12">
-              <!-- <a class="btn btn-primary btn-blockish"
-                href="mailto:Abdalla.Swikir@mbzuai.ac.ae?subject=AIRoCS%20Inquiry">Email the PI</a> -->
-              <a class="btn btn-blockish" href="https://forms.gle/qxykhqFnT3sWA5ks5">Request
-                a Lab Visit</a>
+              <a class="btn btn-blockish" href="https://forms.gle/qxykhqFnT3sWA5ks5">Request a Lab Visit</a>
               <a class="btn btn-blockish" href="https://forms.gle/LVCdofX83ikJN9mw8">Want to join our lab ?</a>
             </div>
           </div>
         </div>
 
-        <!-- Links / Social -->
         <div class="contact-card">
           <h4>Links</h4>
-          <p><a href="http://scholar.google.com">Google Scholar</a> · <a
-              href="http://www.researchgate.net">ResearchGate</a></p>
+          <p><a href="http://scholar.google.com">Google Scholar</a> · <a href="http://www.researchgate.net">ResearchGate</a></p>
           <p>
             <a href="https://www.facebook.com" class="sb facebook" aria-label="Facebook">Facebook</a>
             <a href="http://www.linkedin.com" class="sb linkedin" aria-label="LinkedIn">LinkedIn</a>
@@ -207,8 +167,6 @@
     </div>
 
     <p><a href="#top">Back to top ↑</a></p>
-
-
     <hr>
   </div>
 
@@ -242,25 +200,62 @@
   <script src="js/jquery-1.9.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script>
-    // Simple copy-to-clipboard with tiny inline feedback
+    // Copy-to-clipboard (unchanged)
     (function () {
       function copyText(text, $el) {
         var ta = document.createElement('textarea');
         ta.value = text;
         document.body.appendChild(ta);
         ta.select();
-        try { document.execCommand('copy'); } catch (e) { }
+        try { document.execCommand('copy'); } catch (e) {}
         document.body.removeChild(ta);
         var prev = $el.text();
         $el.text('copied').addClass('copy-ok');
         setTimeout(function () { $el.text(prev).removeClass('copy-ok'); }, 1200);
       }
-      $(document).on('click', '.copy-badge', function (e) {
-        e.preventDefault();
-        copyText($(this).data('copy'), $(this));
+      if (window.jQuery) {
+        $(document).on('click', '.copy-badge', function (e) {
+          e.preventDefault();
+          copyText($(this).data('copy'), $(this));
+        });
+      }
+    })();
+
+    // Robust navbar toggle:
+    // If Bootstrap's collapse plugin is present, it will handle the toggle.
+    // If not, this tiny fallback keeps the hamburger working.
+    (function () {
+      function ready(fn) { /in/.test(document.readyState) ? setTimeout(function(){ ready(fn); }, 9) : fn(); }
+      ready(function () {
+        var btn = document.querySelector('.btn-navbar');
+        if (!btn) return;
+        var targetSel = btn.getAttribute('data-target');
+        var target = document.querySelector(targetSel);
+        if (!target) return;
+
+        // Update aria-expanded on click
+        btn.addEventListener('click', function () {
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', !expanded);
+        });
+
+        // Fallback toggle if $.fn.collapse is missing
+        if (!(window.jQuery && jQuery.fn && jQuery.fn.collapse)) {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (target.className.indexOf('in') === -1) {
+              target.className += ' in';
+              target.style.height = 'auto';
+              target.style.overflow = 'visible';
+            } else {
+              target.className = target.className.replace(/\bin\b/, '').trim();
+              target.style.height = '0';
+              target.style.overflow = 'hidden';
+            }
+          });
+        }
       });
     })();
   </script>
 </body>
-
 </html>
