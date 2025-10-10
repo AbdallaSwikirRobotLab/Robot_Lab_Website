@@ -172,6 +172,33 @@
       }
     }
   </style>
+  <style>
+/* Phone/tablet: stack items and wrap long names to stop overlap */
+@media (max-width: 979px) {
+  .navbar .btn-navbar { display: block; }
+  .nav-collapse { clear: both; width: 100%; }
+  .nav-collapse.collapse { height: 0; overflow: hidden; }
+  .nav-collapse.in { height: auto; overflow: visible; }
+
+  .navbar .nav { float: none; width: 100%; margin: 0; }
+  .navbar .nav > li { float: none; display: block; }
+  .navbar .nav > li > a {
+    display: block;
+    white-space: normal;       /* allow wrapping */
+    overflow-wrap: anywhere;   /* break long words if needed */
+    word-wrap: break-word;     /* legacy fallback */
+    line-height: 22px;         /* prevent line collisions */
+    padding: 10px 14px;        /* finger-friendly */
+    border-top: 1px solid #eee;
+  }
+}
+
+/* Optional fallback: if collapse JS fails, keep menu visible on small phones */
+@media (max-width: 767px) {
+  .nav-collapse.collapse { height: auto !important; overflow: visible !important; }
+}
+</style>
+
 </head>
 
 <body>
