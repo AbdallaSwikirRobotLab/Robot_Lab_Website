@@ -50,12 +50,12 @@
       background: #08c;
       color: #fff;
       border: 0;
-      width: 100%;
       padding: 10px 12px;
       font-size: 15px;
       border-radius: 4px;
       font-weight: 600;
       text-transform: uppercase;
+      box-sizing: border-box;
     }
 
     /* Responsive map embed */
@@ -102,22 +102,29 @@
 
     @media (max-width: 767px) {
       .masthead .navbar-inner {
-        padding: 0 10px;
+        position: relative;
+        padding: 10px;
       }
 
       .nav-toggle {
         display: block;
-        margin-bottom: 8px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: auto;
+        padding: 8px 12px;
       }
 
       .masthead .nav {
         display: none !important;
         float: none;
         width: 100%;
-        margin: 0;
+        margin: 48px 0 0;
         border: 1px solid #e5e5e5;
         border-radius: 4px;
         overflow: hidden;
+        box-sizing: border-box;
+        background: #fff;
       }
 
       .masthead .nav.open {
@@ -135,7 +142,8 @@
 
       .masthead .nav>li>a {
         display: block;
-        padding: 10px 12px;
+        padding: 12px 14px;
+        line-height: 1.4;
       }
 
       .subhead h1 {
