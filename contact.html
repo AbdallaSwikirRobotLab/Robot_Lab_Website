@@ -45,6 +45,17 @@
       margin-bottom: 8px;
     }
 
+    .nav-toggle {
+      display: none;
+      background: #08c;
+      color: #fff;
+      border: 0;
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 15px;
+      border-radius: 4px;
+    }
+
     /* Responsive map embed */
     .map-wrap {
       position: relative;
@@ -86,6 +97,50 @@
       max-width: 100%;
       height: auto;
     }
+
+    @media (max-width: 767px) {
+      .masthead .navbar-inner {
+        padding: 0 10px;
+      }
+
+      .nav-toggle {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .masthead .nav {
+        display: none;
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      .masthead .nav.open {
+        display: block;
+      }
+
+      .masthead .nav>li {
+        float: none;
+        border-top: 1px solid #e5e5e5;
+      }
+
+      .masthead .nav>li:first-child {
+        border-top: 0;
+      }
+
+      .masthead .nav>li>a {
+        display: block;
+        padding: 10px 12px;
+      }
+
+      .subhead h1 {
+        font-size: 1.3rem;
+      }
+
+      .subhead .lead {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 
@@ -100,7 +155,8 @@
       <div class="navbar">
         <div class="navbar-inner">
           <div class="container">
-            <ul class="nav">
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+            <ul class="nav" id="primary-nav">
               <li><a href="index.html">Home</a></li>
               <li><a href="people.html">People</a></li>
               <li><a href="research.html">Research</a></li>
@@ -259,6 +315,30 @@
         e.preventDefault();
         copyText($(this).data('copy'), $(this));
       });
+    })();
+
+    // Lightweight nav toggle for phones
+    (function () {
+      var $nav = $('#primary-nav');
+      var $toggle = $('.nav-toggle');
+
+      function syncState() {
+        var isDesktop = $(window).width() > 767;
+        if (isDesktop) {
+          $nav.removeClass('open');
+          $toggle.attr('aria-expanded', true);
+        } else {
+          $toggle.attr('aria-expanded', $nav.hasClass('open'));
+        }
+      }
+
+      $toggle.on('click', function () {
+        var isOpen = $nav.toggleClass('open').hasClass('open');
+        $(this).attr('aria-expanded', isOpen);
+      });
+
+      $(window).on('resize orientationchange', syncState);
+      syncState();
     })();
   </script>
 </body>
