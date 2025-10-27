@@ -54,6 +54,8 @@
       padding: 10px 12px;
       font-size: 15px;
       border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
     }
 
     /* Responsive map embed */
@@ -109,14 +111,17 @@
       }
 
       .masthead .nav {
-        display: none;
+        display: none !important;
         float: none;
         width: 100%;
         margin: 0;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        overflow: hidden;
       }
 
       .masthead .nav.open {
-        display: block;
+        display: block !important;
       }
 
       .masthead .nav>li {
