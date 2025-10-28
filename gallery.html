@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,6 +24,18 @@
 
     .gallery-toolbar .controls {
       margin-bottom: 10px;
+    }
+
+    .gallery-toolbar .form-inline>input,
+    .gallery-toolbar .form-inline>select,
+    .gallery-toolbar .form-inline>button {
+      margin-right: 8px;
+      margin-bottom: 8px;
+      vertical-align: middle;
+    }
+
+    .gallery-toolbar .form-inline>button {
+      margin-right: 0;
     }
 
     .nav-toggle {
@@ -134,6 +146,14 @@
     }
 
     @media (max-width: 767px) {
+      .gallery-toolbar .form-inline>input,
+      .gallery-toolbar .form-inline>select,
+      .gallery-toolbar .form-inline>button {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+      }
+
       .gi .tile-body {
         padding: 8px;
       }
@@ -238,7 +258,7 @@
     <!-- Controls -->
     <div class="gallery-toolbar">
       <form class="form-inline controls">
-        <input id="searchInput" type="text" class="input-xxlarge" placeholder="Search title, people, tags…">
+        <input id="searchInput" type="text" class="input-xxlarge" placeholder="Search title, people.">
         <select id="yearFilter" class="input-small">
           <option value="all">All years</option>
         </select>
@@ -247,9 +267,6 @@
           <option value="photo">Photo</option>
           <option value="video">Video</option>
           <option value="demo">Demo</option>
-        </select>
-        <select id="tagFilter" class="input-medium">
-          <option value="all">All tags</option>
         </select>
         <button id="clearBtn" type="button" class="btn">Clear</button>
       </form>
@@ -273,7 +290,7 @@
             </a>
             <div class="tile-body">
               <div class="title">Aerial Manipulation Platform</div>
-              <div class="meta">2025 · Photo</div>
+              <div class="meta">2025 Â· Photo</div>
               <div class="labels">
                 <span class="label label-info">Aerial</span>
                 <span class="label label-success">Manipulation</span>
@@ -289,15 +306,15 @@
                data-kind="youtube"
                data-embed="https://www.youtube.com/embed/dQw4w9WgXcQ"
                data-caption="Instruction-following amid moving crowds with predictive control."
-               data-credit="AIRoCS Lab · ICRA 2025">
+               data-credit="AIRoCS Lab Â· ICRA 2025">
               <div class="thumb-wrap">
                 <img class="thumb" src="thumbs/vln_dynamic.jpg" alt="Agent navigating among people" loading="lazy">
                 <span class="play-badge">Play</span>
               </div>
             </a>
             <div class="tile-body">
-              <div class="title">Vision-Language Navigation (ICRA’25)</div>
-              <div class="meta">2025 · Video</div>
+              <div class="title">Vision-Language Navigation (ICRAâ€™25)</div>
+              <div class="meta">2025 Â· Video</div>
               <div class="labels">
                 <span class="label label-warning">Vision-Language</span>
                 <span class="label">Navigation</span>
@@ -320,8 +337,8 @@
               </div>
             </a>
             <div class="tile-body">
-              <div class="title">Swarm Robustness — Field Test</div>
-              <div class="meta">2025 · Demo</div>
+              <div class="title">Swarm Robustness â€” Field Test</div>
+              <div class="meta">2025 Â· Demo</div>
               <div class="labels">
                 <span class="label label-inverse">Swarms</span>
                 <span class="label label-important">Robustness</span>
@@ -341,7 +358,7 @@
              </a> -->
           <figcaption class="tile-caption">
             <div class="title">Lab Launch</div>
-            <div class="meta">2025 · Photo</div>
+            <div class="meta">2025 Â· Photo</div>
             <div class="labels">
               <span class="label label-important">Robot</span>
             </div>
@@ -359,7 +376,7 @@
              </a> -->
           <figcaption class="tile-caption">
             <div class="title">Honoured to host His Highness</div>
-            <div class="meta">2025 · Photo</div>
+            <div class="meta">2025 Â· Photo</div>
             <div class="labels">
               <span class="label label-important">His Highness</span>
             </div>
@@ -370,7 +387,7 @@
     </div>
 
 
-    <p><a href="#top">Back to top ↑</a></p>
+    <p><a href="#top">Back to top â†‘</a></p>
 
     <hr>
   </div>
@@ -381,7 +398,7 @@
         <div class="span5">
           <h3>Contact Information</h3>
           <p><b>Email:</b> <a href="mailto:Abdalla.Swikir@mbzuai.ac.ae">Abdalla.Swikir@mbzuai.ac.ae</a></p>
-          <p><b>Office Hours: </b>Monday–Friday (9.00am–5.00pm)</p>
+          <p><b>Office Hours: </b>Mondayâ€“Friday (9.00amâ€“5.00pm)</p>
 
         </div>
         <div class="span2">
@@ -402,7 +419,7 @@
   <div id="mediaModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="mediaTitle"
     aria-hidden="true">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">Ã—</button>
       <h3 id="mediaTitle">Preview</h3>
     </div>
     <div class="modal-body">
@@ -410,8 +427,8 @@
     </div>
     <div class="modal-footer">
       <a id="downloadLink" class="btn" href="#" download>Download</a>
-      <a id="prevBtn" class="btn">‹ Prev</a>
-      <a id="nextBtn" class="btn">Next ›</a>
+      <a id="prevBtn" class="btn">â€¹ Prev</a>
+      <a id="nextBtn" class="btn">Next â€º</a>
       <a class="btn btn-primary" data-dismiss="modal">Close</a>
     </div>
   </div>
@@ -445,72 +462,70 @@
     })();
 
     (function () {
-      function norm(s) { return (s || '').toString().toLowerCase(); }
-
-      // Build filter options (year + tag) from tiles
-      function populateFilters() {
-        var years = {}, tags = {};
-        $('.gi').each(function () {
-          years[$(this).data('year')] = true;
-          var tagStr = ($(this).data('tags') || '').toString();
-          tagStr.split(',').map(function (t) { return $.trim(t); }).forEach(function (t) {
-            if (t) tags[t] = true;
-          });
-        });
-        var yearList = Object.keys(years).sort(function (a, b) { return b - a; });
-        var tagList = Object.keys(tags).sort(function (a, b) { return a.toLowerCase() > b.toLowerCase() ? 1 : -1; });
-
-        var $y = $('#yearFilter'), $t = $('#tagFilter');
-        yearList.forEach(function (y) { $y.append('<option value="' + y + '">' + y + '</option>'); });
-        tagList.forEach(function (t) { $t.append('<option value="' + t + '">' + t + '</option>'); });
+      function norm(s) {
+        return (s || '').toString().toLowerCase();
       }
 
-      // Apply text/year/type/tag filters
+      function populateFilters() {
+        var years = {};
+        $('.gi').each(function () {
+          var year = $(this).data('year');
+          if (year) { years[year] = true; }
+        });
+
+        var yearList = Object.keys(years).sort(function (a, b) { return b - a; });
+        var $y = $('#yearFilter');
+        $y.find('option:not([value="all"])').remove();
+        yearList.forEach(function (y) {
+          $y.append('<option value="' + y + '">' + y + '</option>');
+        });
+      }
+
       function applyFilters() {
-        var q = norm($('#searchInput').val());
-        var y = $('#yearFilter').val();
+        var query = norm($('#searchInput').val());
+        var year = $('#yearFilter').val();
         var type = $('#typeFilter').val();
-        var tag = $('#tagFilter').val();
 
         $('.gi').each(function () {
           var $it = $(this);
-          var matchesYear = (y === 'all') || ($it.data('year').toString() === y);
+          var itemYear = $it.data('year');
+          var matchesYear = (year === 'all') || (itemYear && itemYear.toString() === year);
           var matchesType = (type === 'all') || (norm($it.data('type')) === norm(type));
-          var matchesTag = (tag === 'all') || (norm(($it.data('tags') || '')).indexOf(norm(tag)) !== -1);
-          var matchesQ = !q || norm($it.data('title') + ' ' + $it.text()).indexOf(q) !== -1;
-          $it.toggle(matchesYear && matchesType && matchesTag && matchesQ);
+          var text = norm(($it.data('title') || '') + ' ' + $it.text());
+          var matchesQuery = !query || text.indexOf(query) !== -1;
+          $it.toggle(matchesYear && matchesType && matchesQuery);
         });
 
-        // Hide headings with no visible items
         $('[data-year-row]').each(function () {
-          var year = $(this).data('year-row');
-          var any = $(this).find('.gi:visible').length > 0;
-          $('[data-year-heading="' + year + '"]').toggle(any);
-          $(this).toggle(any);
+          var $row = $(this);
+          var yearKey = $row.data('year-row');
+          var any = $row.find('.gi:visible').length > 0;
+          $('[data-year-heading="' + yearKey + '"]').toggle(any);
+          $row.toggle(any);
         });
       }
 
-      // Clear
-      $('#clearBtn').on('click', function () {
-        $('#searchInput').val('');
-        $('#yearFilter').val('all');
-        $('#typeFilter').val('all');
-        $('#tagFilter').val('all');
+      function wireFilters() {
+        populateFilters();
         applyFilters();
-      });
 
-      // Wire up inputs
-      $('#searchInput').on('keyup', applyFilters);
-      $('#yearFilter, #typeFilter, #tagFilter').on('change', applyFilters);
+        $('#searchInput').on('keyup', applyFilters);
+        $('#yearFilter, #typeFilter').on('change', applyFilters);
+        $('#clearBtn').on('click', function () {
+          $('#searchInput').val('');
+          $('#yearFilter').val('all');
+          $('#typeFilter').val('all');
+          applyFilters();
+        });
+      }
 
-      populateFilters();
-      applyFilters();
+      wireFilters();
 
       /* ---------- Modal viewer with keyboard navigation ---------- */
       var currentIndex = -1;
 
       function visibleItems() {
-        return $('.gi:visible .gi-link').map(function (i, el) { return $(el); }).get();
+        return $('.gi:visible .gi-link').get();
       }
 
       function openAt(index) {
@@ -520,7 +535,7 @@
         if (index >= items.length) index = 0;
         currentIndex = index;
 
-        var $a = items[currentIndex];
+        var $a = $(items[currentIndex]);
         var $card = $a.closest('.gi');
         var title = $card.data('title') || 'Preview';
         var kind = $a.data('kind'); // image | video | youtube
@@ -564,7 +579,7 @@
       $(document).on('click', '.gi-link', function (e) {
         e.preventDefault();
         var items = visibleItems();
-        var idx = items.indexOf($(this));
+        var idx = items.indexOf(this);
         openAt(idx);
       });
 
@@ -588,3 +603,4 @@
 </body>
 
 </html>
+
