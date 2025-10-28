@@ -562,7 +562,9 @@
         });
         var list = Object.keys(years).sort(function (a, b) { return b - a; });
         var $y = $("#yearFilter");
+        $y.find('option:not([value="all"])').remove();
         list.forEach(function (y) { $y.append('<option value="' + y + '">' + y + '</option>'); });
+        $y.val("all");
       }
 
       function applyFilters() {
@@ -577,19 +579,45 @@
           var matchesYear = (year === "all") || ($c.data("year").toString() === year);
           var matchesTerm = (term === "all") || (norm($c.data("term")) === norm(term));
           var matchesLevel = (level === "all") || (norm($c.data("level")) === norm(level));
-          $c.toggle(matchesQ && matchesYear && matchesTerm && matchesLevel);
+          var isVisible = matchesQ && matchesYear && matchesTerm && matchesLevel;
+          $c.toggle(isVisible).data("isVisible", isVisible);
         });
+
+        updateCourseSections();
       }
 
-      $("#courseSearch").on("keyup", applyFilters);
-      $("#yearFilter, #termFilter, #levelFilter").on("change", applyFilters);
-      $("#clearFilters").on("click", function () {
+      function clearFilters() {
         $("#courseSearch").val("");
         $("#yearFilter").val("all");
         $("#termFilter").val("all");
         $("#levelFilter").val("all");
         applyFilters();
-      });
+      }
+
+      function updateCourseSections() {
+        var $section = $("#current");
+        if (!$section.length) { return; }
+
+        var $cards = $section.find(".course-card");
+        if (!$cards.length) { return; }
+
+        var hasVisible = $cards.filter(function () {
+          return $(this).data("isVisible");
+        }).length > 0;
+
+        var $header = $section.find(".page-header").first();
+        if (hasVisible) {
+          $header.show();
+        } else {
+          $header.hide();
+        }
+
+        $('.bs-docs-sidenav a[href="#current"]').parent().toggle(hasVisible);
+      }
+
+      $("#courseSearch").on("keyup", applyFilters);
+      $("#yearFilter, #termFilter, #levelFilter").on("change", applyFilters);
+      $("#clearFilters").on("click", clearFilters);
 
       populateYears();
       applyFilters();

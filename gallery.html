@@ -466,7 +466,7 @@
         return (s || '').toString().toLowerCase();
       }
 
-      function populateFilters() {
+      function populateYearFilter() {
         var years = {};
         $('.gi').each(function () {
           var year = $(this).data('year');
@@ -474,10 +474,32 @@
         });
 
         var yearList = Object.keys(years).sort(function (a, b) { return b - a; });
-        var $y = $('#yearFilter');
-        $y.find('option:not([value="all"])').remove();
+        var $yearSelect = $('#yearFilter');
+        $yearSelect.find('option:not([value="all"])').remove();
         yearList.forEach(function (y) {
-          $y.append('<option value="' + y + '">' + y + '</option>');
+          $yearSelect.append('<option value="' + y + '">' + y + '</option>');
+        });
+        $yearSelect.val('all');
+      }
+
+      function updateYearSections() {
+        $('[data-year-row]').each(function () {
+          var $row = $(this);
+          var yearKey = $row.data('year-row');
+          var $heading = $('[data-year-heading="' + yearKey + '"]');
+          var hasVisible = $row.children('.gi').filter(function () {
+            return $(this).data('isVisible');
+          }).length > 0;
+
+          if ($heading.length) {
+            if (hasVisible) { $heading.show(); } else { $heading.hide(); }
+          }
+
+          if (hasVisible) {
+            $row.show();
+          } else {
+            $row.hide();
+          }
         });
       }
 
@@ -493,30 +515,28 @@
           var matchesType = (type === 'all') || (norm($it.data('type')) === norm(type));
           var text = norm(($it.data('title') || '') + ' ' + $it.text());
           var matchesQuery = !query || text.indexOf(query) !== -1;
-          $it.toggle(matchesYear && matchesType && matchesQuery);
+          var isVisible = matchesYear && matchesType && matchesQuery;
+
+          $it.toggle(isVisible).data('isVisible', isVisible);
         });
 
-        $('[data-year-row]').each(function () {
-          var $row = $(this);
-          var yearKey = $row.data('year-row');
-          var any = $row.find('.gi:visible').length > 0;
-          $('[data-year-heading="' + yearKey + '"]').toggle(any);
-          $row.toggle(any);
-        });
+        updateYearSections();
+      }
+
+      function clearFilters() {
+        $('#searchInput').val('');
+        $('#yearFilter').val('all');
+        $('#typeFilter').val('all');
+        applyFilters();
       }
 
       function wireFilters() {
-        populateFilters();
+        populateYearFilter();
         applyFilters();
 
         $('#searchInput').on('keyup', applyFilters);
         $('#yearFilter, #typeFilter').on('change', applyFilters);
-        $('#clearBtn').on('click', function () {
-          $('#searchInput').val('');
-          $('#yearFilter').val('all');
-          $('#typeFilter').val('all');
-          applyFilters();
-        });
+        $('#clearBtn').on('click', clearFilters);
       }
 
       wireFilters();

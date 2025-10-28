@@ -484,8 +484,16 @@
         var areaList = Object.keys(areas).sort();
         var yearList = Object.keys(years).sort(function (a, b) { return b - a; });
         var $area = $('#area'), $year = $('#year');
-        areaList.forEach(function (a) { if (a && a !== 'undefined') $area.append('<option>' + a + '</option>'); });
-        yearList.forEach(function (y) { if (y && y !== 'undefined') $year.append('<option>' + y + '</option>'); });
+        $area.find('option:not([value="all"])').remove();
+        $year.find('option:not([value="all"])').remove();
+        areaList.forEach(function (a) {
+          if (a && a !== 'undefined') { $area.append('<option value="' + a + '">' + a + '</option>'); }
+        });
+        yearList.forEach(function (y) {
+          if (y && y !== 'undefined') { $year.append('<option value="' + y + '">' + y + '</option>'); }
+        });
+        $area.val('all');
+        $year.val('all');
       }
 
       function applyFilters() {
@@ -500,17 +508,25 @@
           var matchesArea = (area === 'all') || ($it.data('area') == area);
           var matchesStatus = (status === 'all') || ($it.data('status') == status);
           var matchesYear = (year === 'all') || ($it.data('year').toString() === year);
-          $it.toggle(matchesQ && matchesArea && matchesStatus && matchesYear);
+          var isVisible = matchesQ && matchesArea && matchesStatus && matchesYear;
+          $it.toggle(isVisible).data('isVisible', isVisible);
         });
+      }
+
+      function clearFilters() {
+        $('#q').val('');
+        $('#area').val('all');
+        $('#status').val('all');
+        $('#year').val('all');
+        applyFilters();
       }
 
       $('#q').on('keyup', applyFilters);
       $('#area, #status, #year').on('change', applyFilters);
-      $('#clear').on('click', function () {
-        $('#q').val(''); $('#area').val('all'); $('#status').val('all'); $('#year').val('all'); applyFilters();
-      });
+      $('#clear').on('click', clearFilters);
 
-      populateFilters(); applyFilters();
+      populateFilters();
+      applyFilters();
     })();
   </script>
 </body>

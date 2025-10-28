@@ -231,8 +231,8 @@
               <option value="postdoc">Postdoc</option>
               <option value="research-engineer">Research Engineer</option>
               <option value="phd">PhD Students</option>
-              <option value="masters">Master Students</option>
-              <option value="visiting">Visiting Scholors</option>
+              <option value="master-students">Master Students</option>
+              <option value="visiting-scholars">Visiting Scholors</option>
               <option value="intern">Interns</option>
               <option value="alumni">Alumni</option>
             </select>
@@ -699,6 +699,33 @@
     (function () {
       function norm(s) { return (s || "").toString().toLowerCase(); }
 
+      function updateSections() {
+        $(".section-pad").each(function () {
+          var $section = $(this);
+          var $cards = $section.find(".person-card");
+          if (!$cards.length) { return; }
+
+          var hasVisible = $cards.filter(function () {
+            return $(this).closest(".row-fluid").data("isVisible");
+          }).length > 0;
+
+          var $separator = $section.next("hr");
+          var sectionId = $section.attr("id");
+          if (sectionId) {
+            var $navItem = $('.bs-docs-sidenav a[href="#' + sectionId + '"]').parent();
+            $navItem.toggle(hasVisible);
+          }
+
+          if (hasVisible) {
+            $section.show();
+            if ($separator.length) { $separator.show(); }
+          } else {
+            $section.hide();
+            if ($separator.length) { $separator.hide(); }
+          }
+        });
+      }
+
       function applyFilters() {
         var q = norm($("#peopleSearch").val());
         var role = $("#roleFilter").val();
@@ -708,17 +735,24 @@
           var text = norm($card.text());
           var matchesQ = !q || text.indexOf(q) !== -1;
           var matchesRole = (role === "all") || (norm($card.data("role")) === norm(role));
-          $card.closest(".row-fluid").toggle(matchesQ && matchesRole);
+          var isVisible = matchesQ && matchesRole;
+          $card.closest(".row-fluid").toggle(isVisible).data("isVisible", isVisible);
         });
+
+        updateSections();
+      }
+
+      function clearFilters() {
+        $("#peopleSearch").val("");
+        $("#roleFilter").val("all");
+        applyFilters();
       }
 
       $("#peopleSearch").on("keyup", applyFilters);
       $("#roleFilter").on("change", applyFilters);
-      $("#clearFilters").on("click", function () {
-        $("#peopleSearch").val("");
-        $("#roleFilter").val("all");
-        applyFilters();
-      });
+      $("#clearFilters").on("click", clearFilters);
+
+      applyFilters();
     })();
   </script>
 </body>

@@ -630,20 +630,20 @@
         return (s || '').toString().toLowerCase();
       }
 
-      function populateFilters() {
+      function populateYearFilter() {
         var years = {};
         $('.news-item').each(function () {
           var year = $(this).data('year');
           if (year) { years[year] = true; }
         });
 
-        var yearList = Object.keys(years).sort(function (a, b) { return b - a; });
-        var $yearSel = $('#yearFilter');
-        $yearSel.find('option:not([value="all"])').remove();
-        yearList.forEach(function (y) {
-          $yearSel.append('<option value="' + y + '">' + y + '</option>');
+        var sortedYears = Object.keys(years).sort(function (a, b) { return b - a; });
+        var $yearSelect = $('#yearFilter');
+        $yearSelect.find('option:not([value="all"])').remove();
+        sortedYears.forEach(function (year) {
+          $yearSelect.append('<option value="' + year + '">' + year + '</option>');
         });
-        $yearSel.val('all');
+        $yearSelect.val('all');
       }
 
       function sortWithinYear() {
@@ -659,45 +659,62 @@
         });
       }
 
+      function updateYearSections() {
+        $('[data-year-list]').each(function () {
+          var $list = $(this);
+          var yearKey = $list.data('year-list');
+          var $heading = yearKey !== undefined ? $('[data-year-heading="' + yearKey + '"]') : $();
+          var hasVisible = $list.children('.news-item').filter(function () {
+            return $(this).data('isVisible');
+          }).length > 0;
+
+          if ($heading.length) {
+            if (hasVisible) { $heading.show(); } else { $heading.hide(); }
+          }
+
+          if (hasVisible) {
+            $list.show();
+          } else {
+            $list.hide();
+          }
+        });
+      }
+
       function applyFilters() {
-        var q = normalize($('#searchInput').val());
+        var query = normalize($('#searchInput').val());
         var year = $('#yearFilter').val();
         var type = $('#typeFilter').val();
 
         $('.news-item').each(function () {
-          var $it = $(this);
-          var itemYear = $it.data('year');
+          var $item = $(this);
+          var itemYear = $item.data('year');
           var matchesYear = (year === 'all') || (itemYear && itemYear.toString() === year);
-          var matchesType = (type === 'all') || (normalize($it.data('type')) === normalize(type));
-          var text = normalize($it.text());
-          var matchesQuery = !q || text.indexOf(q) !== -1;
+          var matchesType = (type === 'all') || (normalize($item.data('type')) === normalize(type));
+          var text = normalize($item.text());
+          var matchesQuery = !query || text.indexOf(query) !== -1;
+          var isVisible = matchesYear && matchesType && matchesQuery;
 
-          $it.toggle(matchesYear && matchesType && matchesQuery);
+          $item.toggle(isVisible).data('isVisible', isVisible);
         });
 
-        $('[data-year-list]').each(function () {
-          var $list = $(this);
-          var yearKey = $list.data('year-list');
-          var anyVisible = $list.find('.news-item:visible').length > 0;
-          if (yearKey !== undefined) {
-            $('[data-year-heading="' + yearKey + '"]').toggle(anyVisible);
-          }
-          $list.toggle(anyVisible);
-        });
+        updateYearSections();
+      }
+
+      function clearFilters() {
+        $('#searchInput').val('');
+        $('#yearFilter').val('all');
+        $('#typeFilter').val('all');
+        applyFilters();
       }
 
       function wireUp() {
-        populateFilters();
+        populateYearFilter();
         sortWithinYear();
+        applyFilters();
 
         $('#searchInput').on('keyup', applyFilters);
         $('#yearFilter, #typeFilter').on('change', applyFilters);
-        $('#clearBtn').on('click', function () {
-          $('#searchInput').val('');
-          $('#yearFilter').val('all');
-          $('#typeFilter').val('all');
-          applyFilters();
-        });
+        $('#clearBtn').on('click', clearFilters);
 
         if (window.location.hash) {
           var $target = $(window.location.hash);
@@ -707,8 +724,6 @@
             setTimeout(function () { $target.removeClass('highlight'); }, 3000);
           }
         }
-
-        applyFilters();
       }
 
       if (window.jQuery) { jQuery(wireUp); }

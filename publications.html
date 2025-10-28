@@ -1005,8 +1005,30 @@
         });
         var list = Object.keys(years).sort(function (a, b) { return b - a; });
         var $sel = $('#yearFilter');
+        $sel.find('option:not([value="all"])').remove();
         list.forEach(function (y) {
           $sel.append('<option value="' + y + '">' + y + '</option>');
+        });
+        $sel.val('all');
+      }
+
+      function updateYearSections() {
+        $('.year-heading').each(function () {
+          var $heading = $(this);
+          var $list = $heading.next('.pub-list');
+          if (!$list.length) { return; }
+
+          var hasVisible = $list.children('.pub-item').filter(function () {
+            return $(this).data('isVisible');
+          }).length > 0;
+
+          if (hasVisible) {
+            $heading.show();
+            $list.show();
+          } else {
+            $heading.hide();
+            $list.hide();
+          }
         });
       }
 
@@ -1022,20 +1044,26 @@
           var text = normalize($it.text());
           var matchesQuery = !q || text.indexOf(q) !== -1;
 
-          $it.toggle(matchesYear && matchesType && matchesQuery);
+          var isVisible = matchesYear && matchesType && matchesQuery;
+          $it.toggle(isVisible).data('isVisible', isVisible);
         });
+
+        updateYearSections();
+      }
+
+      function clearFilters() {
+        $('#searchInput').val('');
+        $('#yearFilter').val('all');
+        $('#typeFilter').val('all');
+        applyFilters();
       }
 
       function wireUp() {
         populateYearFilter();
+        applyFilters();
         $('#searchInput').on('keyup', applyFilters);
         $('#yearFilter, #typeFilter').on('change', applyFilters);
-        $('#clearBtn').on('click', function () {
-          $('#searchInput').val('');
-          $('#yearFilter').val('all');
-          $('#typeFilter').val('all');
-          applyFilters();
-        });
+        $('#clearBtn').on('click', clearFilters);
       }
 
       if (window.jQuery) { jQuery(wireUp); }
