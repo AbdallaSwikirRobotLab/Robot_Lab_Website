@@ -213,6 +213,8 @@
       background: #fcf8e3;
     }
   </style>
+  <link href="css/airocs-modern.css" rel="stylesheet">
+  <link rel="icon" href="images/airocs-logo.png" type="image/png">
 </head>
 
 <body>
@@ -220,8 +222,16 @@
 
   <div class="container" id="top">
     <header class="jumbotron subhead" id="overview">
-      <h1>Artificial Intelligence Robotics and Control Systems Group (AIRoCS)</h1>
-      <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
+      <div class="hero-brand">
+        <a class="hero-logo-link" href="index.html" aria-label="AIRoCS home">
+          <img class="site-logo" src="images/airocs-logo.png" alt="AIRoCS Group logo">
+        </a>
+        <div class="hero-copy">
+          <span class="hero-kicker">AI / Robotics / Control Systems</span>
+          <h1>Artificial Intelligence Robotics and Control Systems Group</h1>
+          <p class="lead">Mohamed bin Zayed University of Artificial Intelligence</p>
+        </div>
+      </div>
     </header>
 
     <div class="masthead">
@@ -326,69 +336,97 @@
       </div>
     </div>
 
-    <!-- HIGHLIGHTS -->
-    <div class="row-fluid" style="margin-top:16px;">
+    <!-- RESEARCH DIRECTIONS -->
+    <div class="home-section-heading">
+      <span class="section-kicker">Research directions</span>
+      <h3>Robotics intelligence from theory to deployment</h3>
+      <p>We connect formal foundations, embodied perception, and real-world robotic systems.</p>
+    </div>
+    <div class="row-fluid research-directions">
       <div class="span4">
         <div class="feature">
-          <h4>Featured Research</h4>
+          <span class="feature-index">01</span>
+          <h4>Safe Learning and Control</h4>
           <p>
-            We merge AI and robotics to create safe, adaptive control strategies, designing intelligent systems that
-            learn, adapt, and operate reliably in complex environments.
+            Certified learning, control barrier functions, and verification methods for robots that must adapt while
+            preserving safety and stability.
           </p>
-          <a class="btn " href="research.html">Explore Research</a>
-          <span class="muted-small">See project pages, demos, and datasets.</span>
+          <a class="research-link" href="research.html">Explore this direction <span aria-hidden="true">→</span></a>
         </div>
       </div>
       <div class="span4">
         <div class="feature">
-          <h4>Recent Publications</h4>
-          <!-- <p>
-              IEEE T-RO (2025), ICRA (2025), IJRR (2024), IROS (2024) and more across robotics & AI venues.
-            </p> -->
-          <a class="btn" href="publications.html">Browse Publications</a>
-          <span class="muted-small">Filter by year, venue, and keywords.</span>
+          <span class="feature-index">02</span>
+          <h4>Perception and Manipulation</h4>
+          <p>
+            Visuo-tactile and force-vision fusion, robot learning, and dexterous manipulation for precise interaction
+            in complex environments.
+          </p>
+          <a class="research-link" href="research.html">Explore this direction <span aria-hidden="true">→</span></a>
         </div>
       </div>
       <div class="span4">
         <div class="feature">
-          <h4>Join the Group</h4>
+          <span class="feature-index">03</span>
+          <h4>Swarms and Autonomous Systems</h4>
           <p>
-            We welcome <strong>PhD students</strong>, <strong>postdocs</strong>, and
-            <strong>research interns</strong> passionate about intelligent robots.
+            Distributed intelligence, autonomous navigation, SLAM, and scalable coordination across heterogeneous
+            aerial, mobile, and manipulation platforms.
           </p>
-          <div class="cta-row">
-            <!-- <a class="btn btn-success" href="people.html#postdoctoral">Open Positions</a> -->
-            <a class="btn" href="contact.html">Contact Us</a>
-          </div>
-          <!-- <span class="muted-small">Email your CV to <a
-              href="mailto:Abdalla.Swikir@mbzuai.ac.ae">Abdalla.Swikir@mbzuai.ac.ae</a></span> -->
+          <a class="research-link" href="research.html">Explore this direction <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
 
-    <!-- RECENT NEWS PREVIEW (manually curated; links point to news.html anchors) -->
-    <div class="row-fluid" style="margin-top:18px;">
+    <div class="home-link-strip" aria-label="Explore AIRoCS">
+      <a href="publications.html">
+        <span class="link-strip-label">Research output</span>
+        <strong>Browse publications</strong>
+      </a>
+      <a href="people.html">
+        <span class="link-strip-label">Our group</span>
+        <strong>Meet the team</strong>
+      </a>
+      <a href="contact.html">
+        <span class="link-strip-label">Collaborate</span>
+        <strong>Connect with AIRoCS</strong>
+      </a>
+    </div>
+
+    <!-- RECENT NEWS PREVIEW -->
+    <div class="row-fluid home-news">
       <div class="span12">
-        <h3 style="margin-top:0;">Recent News</h3>
-        <!-- <ul class="news-list">
-            <li class="news-item">
-              <span class="label label-info">Paper</span> <strong>ICRA 2025 Oral:</strong>
-              “Vision-Language Navigation in Dynamic Environments.”
-              <span class="muted-small">3 May 2025</span>
-              <div class="muted-small"><a href="news.html#news-icra25-oral">Read more</a> · <a href="publications.html">Paper page</a></div>
-            </li>
-            <li class="news-item">
-              <span class="label label-success">Award</span> Best Demo - Aerial Manipulation Platform.
-              <span class="muted-small">18 March 2025</span>
-              <div class="muted-small"><a href="news.html">See details</a> · <a href="research.html">Project</a></div>
-            </li>
-            <li class="news-item">
-              <span class="label label-warning">Media</span> Interview: Safe RL for Quadrotors.
-              <span class="muted-small">5 February 2025</span>
-              <div class="muted-small"><a href="news.html">Watch / read</a> · <a href="publications.html">Related work</a></div>
-            </li>
-          </ul>
-          <p><a class="btn" href="news.html">All News</a></p> -->
+        <div class="home-section-heading compact">
+          <span class="section-kicker">Latest from the group</span>
+          <h3>News and recognition</h3>
+        </div>
+        <div class="row-fluid news-preview-grid">
+          <div class="span4">
+            <a class="news-preview" href="news.html#news-2025-kuec-robothon">
+              <span class="label label-success">Award</span>
+              <span class="news-preview-year">2025</span>
+              <strong>Mazr3aPorter wins third place at KUEC Robothon</strong>
+              <span>Agricultural logistics automation by the AIRoCS team.</span>
+            </a>
+          </div>
+          <div class="span4">
+            <a class="news-preview" href="news.html#news-ecc25-certified-control">
+              <span class="label">Event</span>
+              <span class="news-preview-year">ECC 2025</span>
+              <strong>Certified control synthesis for robotic systems</strong>
+              <span>A focused session on verified controllers for robotics.</span>
+            </a>
+          </div>
+          <div class="span4">
+            <a class="news-preview" href="news.html#news-icra25-outstanding-reviewer">
+              <span class="label label-success">Recognition</span>
+              <span class="news-preview-year">ICRA 2025</span>
+              <strong>Editorial Board Outstanding Reviewer Award</strong>
+              <span>Recognition for service to the robotics research community.</span>
+            </a>
+          </div>
+        </div>
+        <p class="home-news-action"><a class="btn" href="news.html">View all news</a></p>
       </div>
     </div>
 
@@ -407,7 +445,7 @@
         </div>
         <div class="span2">
           <a href="https://abdallaswikirrobotlab.github.io/Robot_Lab_Website/">
-            <img src="thumbs/AIRoCS_logo.jpg" alt="AIRoCS Group logo">
+            <img src="images/airocs-logo.png" alt="AIRoCS Group logo">
           </a>
         </div>
         <div class="span5">
@@ -463,6 +501,7 @@
       });
     })();
   </script>
+  <script src="js/airocs-modern.js"></script>
 </body>
 
 </html>
